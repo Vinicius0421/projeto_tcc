@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de produtos</title>
+<link rel="stylesheet" href="cadastro_produto.css"></head>
+<body>
+    <img src="img/YummyFoods.png" alt="" srcset="">
+    <header>
+        <h1>CADASTRO DE PRODUTOS</h1>
+        <nav>
+            <a href="pedidos.html" class="menu_funcionarios">Pedidos</a>
+            <a href="historico_pedidos.html" class="menu_funcionarios">Histórico de Pedidos</a>
+            <a href="cadastro_produto.html" class="menu_funcionarios">Cadastrar novo Produto</a>
+            <a href="produtos_disponiveis.html" class="menu_funcionarios">Produtos Disponíveis</a>
+        </nav>
+    </header>
+    <main class="aba_cadastro">
+        <div class="container">
+            <form method="post" action="...">
+
+                <div class="nome_e_valor">   
+                    <div class="nome_do_produto">
+                        <label for="nome_produto">Nome do produto:</label>
+                        <input type="text" name="nome_produto" id="nome_produto" placeholder="Nome do produto">
+                    </div>
+                    <div class="valor_do_produto">
+                        <label for="valor">Valor:</label>
+                        <input type="number" name="valor" id="valor" placeholder="Valor">
+                    </div>
+                </div>
+                
+                <label for="categoria">Categoria:</label>
+                <select name="categoria" id="categoria">
+                    <option value="">Selecione...</option>
+                    <option value="opcao1">Fritos</option>
+                    <option value="opcao2">Assados</option>
+                    <option value="opcao3">Bebidas</option>
+                    <option value="opcao4">Sobremesas</option>
+                </select>
+                
+                <label for="descricao">Descrição:</label>
+                <br>
+                <textarea name="descricao" id="descricao" cols="35" rows="5"></textarea>
+                <div class="botao">
+                    <button type="submit">Cadastrar produto</button>
+                </div>
+            </form>
+        </div>
+    </main>
+    </body>
+    <script src="./Scripts/menu_funcionarios.js"></script>
+    <footer>
+        Rodapé
+    </footer>

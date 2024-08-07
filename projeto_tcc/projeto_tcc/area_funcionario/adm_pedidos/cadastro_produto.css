@@ -1,0 +1,140 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #4E4E4E;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+header {
+    background-color: #222222;
+    width: 100%;
+}
+
+header h1 {
+    color: #F3F3F3;
+    text-align: center;
+    padding: 20px 0;
+}
+
+img {
+    height: 100px;
+    position: absolute;
+    top: -10px;
+    left: -10px; 
+}
+
+nav {
+    border-top: 1px #ffffff solid;
+    background-color: #313131;
+    display: flex;
+    justify-content: space-between; /* Distribui os itens com espaçamento igual entre eles */
+    align-items: center;
+    padding: 10px 50px;  /* Aumenta o padding para mais espaço */
+    width: 100%;
+    box-sizing: border-box; /* Inclui padding no cálculo da largura */
+}
+
+nav a {
+    font-size: 18px;  /* Ajusta o tamanho da fonte para evitar transbordo */
+    text-decoration: none;
+    color: #F3F3F3;
+    text-align: center; 
+}
+
+@media (max-width: 960px) {
+    nav {
+        align-items: flex-start; 
+    }
+
+    nav a {
+        padding: 10px 0; 
+        width: 100%;
+        text-align: left; 
+    }
+}
+
+main {
+    padding-top: 5%;
+}
+
+.container {
+    margin: 0 auto;
+    width: 500px;
+    padding: 30px;
+    background-color: #8C8C8C;
+    border-radius: 15px;
+    box-sizing: border-box;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6)
+}
+
+
+.nome_e_valor{
+    justify-content: space-between;
+    align-items: center;
+    display: flex;
+    margin-bottom: 10px;
+}
+
+label {
+    font-size: 18px;
+}
+
+input, select, textarea, button {
+    margin-top: 5px;
+    margin-bottom: 15px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.6)
+}
+
+input, select, textarea {
+    width: 100%;
+    border-radius: 5px;
+    border: none;
+}
+
+select {
+    height: 27px;
+}
+
+input {
+    width: 200px;
+    height: 25px;
+    padding: 5px;
+}
+
+textarea {
+    resize: vertical; /* Permite que o usuário ajuste a altura do textarea */
+}
+
+button {
+    background-color: #81B3FF;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: bold;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.6)
+}
+
+.botao {
+    text-align: center;
+}
+
+button:hover {
+    background-color: #96befa;
+}
+
+footer {
+    background-color: #222222;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+

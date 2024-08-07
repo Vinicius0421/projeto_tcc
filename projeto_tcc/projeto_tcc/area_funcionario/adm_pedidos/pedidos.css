@@ -1,0 +1,107 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #4E4E4E;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+header {
+    background-color: #222222;
+    width: 100%;
+}
+
+header h1 {
+    color: #F3F3F3;
+    text-align: center;
+    padding: 20px 0;
+}
+
+img {
+    height: 100px;
+    position: absolute;
+    top: -10px;
+    left: -10px; 
+}
+
+nav {
+    border-top: 1px #ffffff solid;
+    background-color: #313131;
+    display: flex;
+    justify-content: space-between; /* Distribui os itens com espaçamento igual entre eles */
+    align-items: center;
+    padding: 10px 50px;  /* Aumenta o padding para mais espaço */
+    width: 100%;
+    box-sizing: border-box; /* Inclui padding no cálculo da largura */
+}
+
+nav a {
+    font-size: 18px;  /* Ajusta o tamanho da fonte para evitar transbordo */
+    text-decoration: none;
+    color: #F3F3F3;
+    text-align: center; 
+}
+
+/* Ajustes responsivos */
+@media (max-width: 960px) {
+    nav {
+        align-items: flex-start; 
+    }
+
+    nav a {
+        padding: 10px 0; 
+        width: 100%;
+        text-align: left; 
+    }
+}
+
+.cabecalho_tabela {
+    background-color: #3f3f3f;
+    color: #ffffff;
+}
+
+table {
+    width: 100%; 
+    border-collapse: collapse;
+    background-color: #ffffff;
+    border: 1px solid;
+}
+
+th, td {
+    padding: 8px;
+    text-align: left;
+    border-top: 1px solid;
+    border-bottom: 1px solid; 
+}
+
+th:first-child, td:first-child {
+    width: 15%; /* Largura da primeira coluna */
+    text-align: center;
+}
+
+th:nth-child(2), td:nth-child(2) {
+    width: 15%; /* Largura da segunda coluna */
+    text-align: center;
+}
+
+th:nth-child(3), td:nth-child(3) {
+    width: 55%; /* Largura da terceira coluna */
+}
+
+th:nth-child(4), td:nth-child(4) {
+    width: 15%; /* Largura da quarta coluna */
+    text-align: center;
+}
+
+footer {
+    background-color: #222222;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
