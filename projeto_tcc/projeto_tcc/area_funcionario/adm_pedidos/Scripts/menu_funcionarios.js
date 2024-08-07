@@ -7,7 +7,7 @@ for (let i = 0; i < botoesmenu.length; i++) {
 function troca_pagina(event){
         const botao = event.target;
         const main = botao.parentElement.parentElement
-        main.getElementsByClassName("aba_cadastro")[0].remove()
+        main.getElementsByTagName("main")[0].remove()
         
     
         let novoconteudo = document.createElement("main");
