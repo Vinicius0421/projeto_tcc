@@ -29,7 +29,7 @@ th, td {
 }
 
 .tabela_historico th:nth-child(3), td:nth-child(3) {
-    width: 20%;
+    width: 20%; /* Largura da terceira coluna */
     text-align: center;
 }
 
