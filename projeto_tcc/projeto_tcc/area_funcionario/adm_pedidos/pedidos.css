@@ -39,7 +39,7 @@ nav {
 }
 
 nav a {
-    font-size: 18px;  /* Ajusta o tamanho da fonte para evitar transbordo */
+    font-size: 18px; 
     text-decoration: none;
     color: #F3F3F3;
     text-align: center; 
@@ -66,8 +66,7 @@ nav a {
 table {
     width: 100%; 
     border-collapse: collapse;
-    background-color: #ffffff;
-    border: 1px solid;
+    background-color: #ffffff;;
 }
 
 th, td {
@@ -77,21 +76,21 @@ th, td {
     border-bottom: 1px solid; 
 }
 
-th:first-child, td:first-child {
+th:first-child .cabecalho_tabela, td:first-child {
     width: 15%; /* Largura da primeira coluna */
     text-align: center;
 }
 
-th:nth-child(2), td:nth-child(2) {
+th:nth-child(2) .cabecalho_tabela, td:nth-child(2) {
     width: 15%; /* Largura da segunda coluna */
     text-align: center;
 }
 
-th:nth-child(3), td:nth-child(3) {
+th:nth-child(3) .cabecalho_tabela, td:nth-child(3) {
     width: 55%; /* Largura da terceira coluna */
 }
 
-th:nth-child(4), td:nth-child(4) {
+th:nth-child(4) .cabecalho_tabela, td:nth-child(4) {
     width: 15%; /* Largura da quarta coluna */
     text-align: center;
 }
