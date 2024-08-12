@@ -1,0 +1,104 @@
+<main class="aba_cadastro">
+        <div class="container">
+            <form method="post" action="...">
+
+                <div class="nome_e_valor">   
+                    <div class="nome_do_produto">
+                        <label for="nome_produto">Nome do produto:</label>
+                        <input type="text" name="nome_produto" id="nome_produto" placeholder="Nome do produto">
+                    </div>
+                    <div class="valor_do_produto">
+                        <label for="valor">Valor:</label>
+                        <input type="number" name="valor" id="valor" placeholder="Valor">
+                    </div>
+                </div>
+                
+                <label for="categoria">Categoria:</label>
+                <select name="categoria" id="categoria">
+                    <option value="">Selecione...</option>
+                    <option value="opcao1">Fritos</option>
+                    <option value="opcao2">Assados</option>
+                    <option value="opcao3">Bebidas</option>
+                    <option value="opcao4">Sobremesas</option>
+                </select>
+                
+                <label for="descricao">Descrição:</label>
+                <br>
+                <textarea name="descricao" id="descricao" cols="35" rows="5"></textarea>
+                <div class="botao">
+                    <button type="submit">Cadastrar produto</button>
+                </div>
+            </form>
+        </div>
+</main>
+
+<style>
+
+    .container {
+    margin: 0 auto;
+    width: 500px;
+    padding: 30px;
+    background-color: #8C8C8C;
+    border-radius: 15px;
+    box-sizing: border-box;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6)
+    }
+
+
+    .nome_e_valor{
+        justify-content: space-between;
+        align-items: center;
+        display: flex;
+        margin-bottom: 10px;
+    }
+
+    label {
+        font-size: 18px;
+    }
+
+    input, select, textarea, button {
+        margin-top: 5px;
+        margin-bottom: 15px;
+        box-shadow: 0 1px 4px rgba(0, 0, 0, 0.6)
+    }
+
+    input, select, textarea {
+        width: 100%;
+        border-radius: 5px;
+        border: none;
+    }
+
+    select {
+        height: 27px;
+    }
+
+    input {
+        width: 200px;
+        height: 25px;
+        padding: 5px;
+    }
+
+    textarea {
+        resize: vertical; /* Permite que o usuário ajuste a altura do textarea */
+    }
+
+    button {
+        background-color: #81B3FF;
+        border: none;
+        border-radius: 5px;
+        padding: 10px 20px;
+        cursor: pointer;
+        font-size: 15px;
+        font-weight: bold;
+        box-shadow: 0 1px 4px rgba(0, 0, 0, 0.6)
+    }
+
+    .botao {
+        text-align: center;
+    }
+
+    button:hover {
+        background-color: #96befa;
+    }
+
+</style>

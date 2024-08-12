@@ -4,19 +4,98 @@ for (let i = 0; i < botoesmenu.length; i++) {
     botoesmenu[i] = addEventListener("click", troca_pagina)
 }
 
+
 function troca_pagina(event){
         const botao = event.target;
-        const main = botao.parentElement.parentElement
-        main.getElementsByClassName("aba_cadastro")[0].remove()
+        console.log(botao)
+        var paginatrocada = botao.innerText;
+        console.log(paginatrocada)
+        var main = botao.parentElement.parentElement
+
         
-    
-        let novoconteudo = document.createElement("main");
-        novoconteudo.classList.add("aba_cadastro")
-        main.appendChild(novoconteudo)
-        novoconteudo.innerHTML = `
-            <div class="container">
+        switch (paginatrocada) {
+            case 'Pedidos':
+                document.getElementsByTagName("main")[0].remove()
+                var novoconteudo = document.createElement("main");
+                main.appendChild(novoconteudo)
+                novoconteudo.innerHTML = `
+                <table>
+                    <tr class="cabecalho_tabela">
+                        <th>Número do pedido</th>
+                        <th>Nome do Cliente</th>
+                        <th></th>
+                        <th>Status</th>
+                    </tr>
+                    <tr>
+                        <td>22144</td>
+                        <td>João</td>
+                        <td></td>
+                        <td>Preparando</td>
+                    </tr>
+                    <tr>
+                        <td>22144</td>
+                        <td>Maria</td>
+                        <td></td>
+                        <td>Preparando</td>
+                    </tr>
+                    <tr>
+                        <td>22144</td>
+                        <td>João</td>
+                        <td></td>
+                        <td>Preparando</td>
+                    </tr>
+                </table>
+                `
+                break;
+
+            case 'Historico de pedidos':
+                document.getElementsByTagName("main")[0].remove()
+                novoconteudo = document.createElement("main");
+                main.appendChild(novoconteudo)
+                novoconteudo.innerHTML = `
+                <table>
+                    <tr class="cabecalho_tabela">
+                        <th>Número do pedido</th>
+                        <th>Nome do Cliente</th>
+                        <th>Preço</th>
+                        <th>Data</th>
+                        <th>Hora</th>
+                    </tr>
+                    <tr>
+                        <td>22144</td>
+                        <td>João</td>
+                        <td>R$ 15,00</td>
+                        <td>07/11/2024</td>
+                        <td>16:53</td>
+                    </tr>
+                    <tr>
+                        <td>22144</td>
+                        <td>Maria</td>
+                        <td>R$ 15,00</td>
+                        <td>07/11/2024</td>
+                        <td>16:53</td>
+                    </tr>
+                    <tr>
+                        <td>22144</td>
+                        <td>João</td>
+                        <td>R$ 15,00</td>
+                        <td>07/11/2024</td>
+                        <td>16:53</td>
+                    </tr>
+                </table>
+                `
+                break;
+
+            case 'Cadastro de produtos':
+                document.getElementsByTagName("main")[0].remove()
+                novoconteudo = document.createElement("main");
+                novoconteudo.classList.add("aba_cadastro");
+                main.appendChild(novoconteudo)
+                novoconteudo.innerHTML = `
+            
+                <div class="container">
                 <form method="post" action="...">
-    
+
                     <div class="nome_e_valor">   
                         <div class="nome_do_produto">
                             <label for="nome_produto">Nome do produto:</label>
@@ -44,7 +123,46 @@ function troca_pagina(event){
                         <button type="submit">Cadastrar produto</button>
                     </div>
                 </form>
-            </div>
-        `
-        clicou = false
+        </div>
+                `
+                break;
+
+            case 'Produtos disponíveis':
+                document.getElementsByTagName("main")[0].remove()
+                novoconteudo = document.createElement("main");
+                main.appendChild(novoconteudo)
+                novoconteudo.innerHTML = `
+                <table>
+            <tr class="cabecalho_tabela">
+                <th>ID do produto</th>
+                <th>Nome do produto</th>
+                <th></th>
+                <th>Quantidade disponivel</th>
+            </tr>
+            <tr>
+                <td>31445</td>
+                <td>Coxinha</td>
+                <td></td>
+                <td>31</td>
+            </tr>
+            <tr>
+                <td>31445</td>
+                <td>Coxinha</td>
+                <td></td>
+                <td>31</td>
+            </tr>
+            <tr>
+                <td>31445</td>
+                <td>Coxinha</td>
+                <td></td>
+                <td>31</td>
+            </tr>
+        </table>
+                `
+                break;
+        
+            default:
+                break;
+        }
+        
     }
