@@ -19,7 +19,7 @@ function troca_pagina(event){
                 var novoconteudo = document.createElement("main");
                 main.appendChild(novoconteudo)
                 novoconteudo.innerHTML = `
-                <table>
+                <table class="tabela_pedidos">
                     <tr class="cabecalho_tabela">
                         <th>Número do pedido</th>
                         <th>Nome do Cliente</th>
@@ -53,7 +53,7 @@ function troca_pagina(event){
                 novoconteudo = document.createElement("main");
                 main.appendChild(novoconteudo)
                 novoconteudo.innerHTML = `
-                <table>
+                <table class="tabela_historico">
                     <tr class="cabecalho_tabela">
                         <th>Número do pedido</th>
                         <th>Nome do Cliente</th>
@@ -132,7 +132,7 @@ function troca_pagina(event){
                 novoconteudo = document.createElement("main");
                 main.appendChild(novoconteudo)
                 novoconteudo.innerHTML = `
-                <table>
+                <table class="produtos_disponiveis">
                     <tr class="cabecalho_tabela">
                         <th>ID do produto</th>
                         <th>Nome do produto</th>
