@@ -1,4 +1,4 @@
-/* Reset and Box Sizing */
+@import url('https://fonts.googleapis.com/css2?family=Lilita+One&display=swap');
 * {
   margin: 0;
   padding: 0;
@@ -7,7 +7,7 @@
 
 body {
   font-family: 'Lilita One', cursive;
-  background: linear-gradient(0deg, #FE702F 0.35%, #AB3600 99.67%);
+  background: #ff9460;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
@@ -24,7 +24,7 @@ body {
 }
 
 .header {
-  background: #D96800;
+  background: #FF7A00;
   padding: 10px;
   display: flex;
   align-items: center;
@@ -33,7 +33,7 @@ body {
 }
 
 .logo {
-  width: 70px;
+  width: 150px;
   margin-left: 10px;
 }
 
@@ -42,38 +42,47 @@ body {
   flex-grow: 1;
   text-align: center;
   color: #ffffff;
-  font-size: 36px;
+  font-size: 50px;
+  margin-right: 150px;
 }
 
 /* Navigation Styles */
 .nav {
   display: flex;
   justify-content: space-around;
-  background: #FF7A00;;
+  background: #D96800;
   padding: 30px;
   width: 100%;
 
 }
 
 .nav a {
-  color: #000000;
+  color: #ffffff;
   text-decoration: none;
-  font-weight: bold;
-  font-size: 18px;
+  font-size: 30px;
   transition: color 0.3s ease;
   cursor: pointer;
-  border: 1px solid;
-  border-radius: 15px;
-  padding: 10px;
-  background-color: #aaa6a6;
+  text-shadow: 
+  -1px -1px 0 #000,  
+  1px -1px 0 #000,  
+  -1px 1px 0 #000,  
+  1px 1px 0 #000; 
+  
+  
+  
+
+  
+  
   
 }
 
 .nav a:hover {
-  color: rgba(255, 0, 0, 0.7);
+  color: #ffff89;
+  text-decoration: underline;
 }
+
 .nome_produto {
-  color: white;
+  color: black;
   font-size: 24px;
   font-family: cursive;
 }
@@ -85,11 +94,14 @@ body {
   margin-top: 150px;
 }
 p{
-  font-size: 20px;
-  color: white;
+  font-size: 40px;
+  color: black;
   text-align: center;
-  
+  font-weight: bold;
   padding: 20px;
+}
+.valor{
+  color: green !important;
 }
 
 button{
@@ -103,17 +115,17 @@ button{
   cursor: pointer;
 }
 .menu-item{
-  background: linear-gradient(0deg, #FE702F 0.35%, #FE702F 99.67%);
+  background-color: white;
   width: 390px;
   border-radius: 35px;
   padding: 15px;
   text-align: center;
   transition: transform 0.3s ease;
-  margin-top: 70px;
+  margin-top: 150px;
   box-shadow: 0 2px 3px rgba(0, 0, 0, 0.2)
 }
 .menu-item2{
-  background: linear-gradient(0deg, #FE702F 0.35%, #FE702F 99.67%);
+  background-color: white;
   width: 390px;
   border-radius: 35px;
   padding: 15px;
@@ -127,13 +139,13 @@ button{
   transform: scale(1.050);
   cursor: pointer;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-  background-color: #f5ac63;
+  background-color: #f3efe6;
 }
 .menu-item2:hover{
   transform: scale(1.050);
   cursor: pointer;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-  background-color: #f5ac63;
+  background-color: #f3efe6;
 }
 img{
   width: 350px;
