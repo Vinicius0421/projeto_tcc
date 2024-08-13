@@ -1,32 +1,40 @@
+/* Reset and Box Sizing */
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-  font-family: Arial, sans-serif;
-  background-color: #000000;
+  font-family: 'Lilita One', cursive;
+  background-color: #FFA500;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #ffffff;
-  text-align: center;
-  height: 100%;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+
+.header-container {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
 }
 
 .header {
-  background-color: #ffa500;
+  background-color: #FF7A00;
   padding: 10px;
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  border-radius: 10px 10px 0 0;
 }
 
 .logo {
-  width: 70px; 
-  margin-left: 10px; 
+  width: 70px;
+  margin-left: 10px;
 }
 
 .header h1 {
@@ -34,52 +42,75 @@ body {
   flex-grow: 1;
   text-align: center;
   color: #ffffff;
-  font-size: 50px;
+  font-size: 36px;
 }
 
+/* Navigation Styles */
 .nav {
   display: flex;
   justify-content: space-around;
-  background-color: #ffd700;
+  background-color: #FFD700;
   padding: 10px;
+  width: 100%;
 }
 
 .nav a {
   color: #ffffff;
   text-decoration: none;
   font-weight: bold;
+  font-size: 18px;
+  transition: color 0.3s ease;
 }
 
 .nav a:hover {
-  text-decoration: underline;
+  color: rgba(0, 0, 0, 0.7);
 }
-
-.menu {
+.nome_produto {
+  color: white;
+  font-size: 24px;
+  font-family: cursive;
+}
+.menu{
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  padding: 100px;
+  align-items: center;
+  justify-content: center;
+  margin-top: 100px;
+  gap: 30px;
+  margin-top: 150px;  
 }
-
-.menu-item {
-  width: 45%;
-  margin: 10px 0;
+p{
+  font-size: 20px;
+  color: white;
   text-align: center;
+  
+  padding: 20px;
 }
-
-.menu-item img {
-  width: 150px; /* Aumentando o tamanho da imagem */
-  height: auto;
+button{
+  font-size: 20px;
+  color: white;
+  background-color: #FF7A00;
+  padding: 20px;
+  padding-left: 10px;
+  border-radius: 15px;
+  border: none;
   cursor: pointer;
 }
-
-.menu-item p {
-  background-color: #ffa500;
-  color: #ffffff;
-  margin: 10px 0 0;
-  padding: 5px;
-  border-radius: 5px;
+.menu-item{
+  background-color: #FF9933;
+  width: 390px;
+  border-radius: 10px;
+  padding: 15px;
+  text-align: center;
+  transition: transform 0.3s ease;
+  margin-top: 30px;
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.2)
 }
-a:hover {
-  color: rgba(0, 0, 0, 0.1);
+.menu-item:hover{
+  transform: scale(1.05);
+  cursor: pointer;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  background-color: #f5ac63;
+}
+img{
+  border-radius: 50px;
 }

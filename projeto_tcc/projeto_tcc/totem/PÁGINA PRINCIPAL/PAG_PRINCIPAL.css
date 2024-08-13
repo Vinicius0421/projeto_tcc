@@ -13,6 +13,7 @@ body {
   font-family: 'Lilita One', cursive;
   background-color: #FFA500;
   display: flex;
+  font-size: bold;
 }
 
 .sidebar {
@@ -73,11 +74,11 @@ body {
 }
 
 .promo-grid {
-  display: grid; 
-  grid-template-columns: repeat(3, 1fr); 
-  gap: 20px; 
-  justify-items: center; /* Centraliza os itens horizontalmente */
-  align-items: center; /* Centraliza os itens verticalmente */
+    display: grid; 
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 20px; 
+    justify-items: center; /* Centraliza os itens horizontalmente */
+    align-items: center; /* Centraliza os itens verticalmente */
 }
 
 .promo-item {
