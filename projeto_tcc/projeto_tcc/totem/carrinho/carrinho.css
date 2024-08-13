@@ -3,27 +3,72 @@
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
 }
 
 body {
     font-family: 'Lilita One', cursive;
+    background-color: #FF9460;
 }
 
 header {
-    background-color: #FF7A00;
     display: flex;
+    background-color: #FF7A00;
     align-items: center;
+    justify-content: center;
+    width: 100%;
 }
 
 .logo {
     width: 100%;
     max-width: 100px;
-    margin-bottom: 50px;
+    padding: 20px;
 }
 
 .titulo {
     color: #ffff;
-    margin: 0 auto;
+    padding-right: 100px;
 }
+
+.img_item {
+    width: 30px;
+}
+
+.item {
+    margin-top: 30px;
+    padding: 20px;
+    align-items: center;
+    background-color: #ffff;
+    display: flex;
+    height: 60px;
+    border-radius: 15px;
+    width: 600px;
+}
+
+.menos {
+    height: 15px;
+    width: 15px;
+    border: 1px solid;
+    cursor: pointer;
+    border-radius: 3px;
+}
+
+.quant_item {
+    text-align: center;
+    border-radius: 3px;
+    border: 1px solid;
+    height: 13px;
+    width: 13px;
+    font-size: 10px;
+}   
+
+.mais {
+    border-radius: 3px;
+    height: 15px;
+    width: 15px;
+    border: 1px solid;
+    cursor: pointer;
+}
+
+
+
  
