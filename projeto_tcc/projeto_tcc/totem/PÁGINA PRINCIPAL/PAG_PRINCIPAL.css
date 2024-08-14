@@ -30,26 +30,28 @@ body {
   border-right: #FFA500;
   
 }
+
 .sidebar-header{
   width: 100%;
   margin-bottom: 16px;
 }
+
 .logo-img{
   width: 150px;
   margin-left: 90px;
 
 }
+
 .sidebar button{
-  height: 60px;
-  background-color: white;
-  color: black;
+  font-size: 18px;
+  border: none;
+  width: 100px;
+  height: 100px;
+  background-color: #ffce97;
   cursor: pointer;
   text-align: center;
-  padding: 12px;
-  font-size: 28px;
-  box-shadow: 0 12px 21px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
   transition: all 0.2s;
-  margin-bottom: 60px;
   border-radius: 15px;
 }
 
@@ -63,6 +65,9 @@ body {
   display: flex;
   flex-direction: column;
   width: 100%;
+  justify-content: center;
+  align-items: center;
+  gap: 80px;
 }
 
 .carrinho {
