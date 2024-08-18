@@ -18,21 +18,6 @@ function replaceHeader(request){
     document.getElementById("header").innerHTML = request.responseText
 }
 
-const botoescarrinho = document.getElementsByClassName('adicionar_carrinho');
+let itensCarrinho = JSON.parse(sessionStorage.getItem('carrinho')) || []
 
-for (let i = 0; i < botoescarrinho.length; i++) {
-    // Event listener para os botôes de adicionar ao carrinho
-    botoescarrinho[i] = addEventListener("click", adicionarAoCarrinho)
-}
-
-function adicionarAoCarrinho(event) {
-    //Funcão para buscar os dados de cada produto disponível no menu
-    const infoProdutos = event.target.parentElement;
-    const imagemProduto = infoProdutos.getElementsByClassName('imagem_produto')[0].src
-    const precoProduto = infoProdutos.getElementsByClassName('valor')[0].innerText.replace("R$", "").replace(",", ".")
-    const nomeProduto = infoProdutos.getElementsByClassName('nome_produto')[0].innerText
-
-    console.log(imagemProduto)
-    console.log(precoProduto)
-    console.log(nomeProduto)
-}
+console.log(itensCarrinho)
