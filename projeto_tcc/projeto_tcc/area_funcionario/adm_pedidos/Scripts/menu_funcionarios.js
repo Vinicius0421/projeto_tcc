@@ -19,7 +19,7 @@ function troca_pagina(event){
                 var novoconteudo = document.createElement("main");
                 main.appendChild(novoconteudo)
                 novoconteudo.innerHTML = `
-                <table>
+                <table class="tabela_pedidos">
                     <tr class="cabecalho_tabela">
                         <th>Número do pedido</th>
                         <th>Nome do Cliente</th>
@@ -53,7 +53,7 @@ function troca_pagina(event){
                 novoconteudo = document.createElement("main");
                 main.appendChild(novoconteudo)
                 novoconteudo.innerHTML = `
-                <table>
+                <table class="tabela_historico">
                     <tr class="cabecalho_tabela">
                         <th>Número do pedido</th>
                         <th>Nome do Cliente</th>
@@ -94,36 +94,36 @@ function troca_pagina(event){
                 novoconteudo.innerHTML = `
             
                 <div class="container">
-                <form method="post" action="...">
+                    <form method="post" action="...">
 
-                    <div class="nome_e_valor">   
-                        <div class="nome_do_produto">
-                            <label for="nome_produto">Nome do produto:</label>
-                            <input type="text" name="nome_produto" id="nome_produto" placeholder="Nome do produto">
+                        <div class="nome_e_valor">   
+                            <div class="nome_do_produto">
+                                <label for="nome_produto">Nome do produto:</label>
+                                <input type="text" name="nome_produto" id="nome_produto" placeholder="Nome do produto">
+                            </div>
+                            <div class="valor_do_produto">
+                                <label for="valor">Valor:</label>
+                                <input type="number" name="valor" id="valor" placeholder="Valor">
+                            </div>
                         </div>
-                        <div class="valor_do_produto">
-                            <label for="valor">Valor:</label>
-                            <input type="number" name="valor" id="valor" placeholder="Valor">
+                        
+                        <label for="categoria">Categoria:</label>
+                        <select name="categoria" id="categoria">
+                            <option value="">Selecione...</option>
+                            <option value="opcao1">Fritos</option>
+                            <option value="opcao2">Assados</option>
+                            <option value="opcao3">Bebidas</option>
+                            <option value="opcao4">Sobremesas</option>
+                        </select>
+                        
+                        <label for="descricao">Descrição:</label>
+                        <br>
+                        <textarea name="descricao" id="descricao" cols="35" rows="5"></textarea>
+                        <div class="botao">
+                            <button type="submit">Cadastrar produto</button>
                         </div>
-                    </div>
-                    
-                    <label for="categoria">Categoria:</label>
-                    <select name="categoria" id="categoria">
-                        <option value="">Selecione...</option>
-                        <option value="opcao1">Fritos</option>
-                        <option value="opcao2">Assados</option>
-                        <option value="opcao3">Bebidas</option>
-                        <option value="opcao4">Sobremesas</option>
-                    </select>
-                    
-                    <label for="descricao">Descrição:</label>
-                    <br>
-                    <textarea name="descricao" id="descricao" cols="35" rows="5"></textarea>
-                    <div class="botao">
-                        <button type="submit">Cadastrar produto</button>
-                    </div>
-                </form>
-        </div>
+                    </form>
+                </div>
                 `
                 break;
 
@@ -132,32 +132,32 @@ function troca_pagina(event){
                 novoconteudo = document.createElement("main");
                 main.appendChild(novoconteudo)
                 novoconteudo.innerHTML = `
-                <table>
-            <tr class="cabecalho_tabela">
-                <th>ID do produto</th>
-                <th>Nome do produto</th>
-                <th></th>
-                <th>Quantidade disponivel</th>
-            </tr>
-            <tr>
-                <td>31445</td>
-                <td>Coxinha</td>
-                <td></td>
-                <td>31</td>
-            </tr>
-            <tr>
-                <td>31445</td>
-                <td>Coxinha</td>
-                <td></td>
-                <td>31</td>
-            </tr>
-            <tr>
-                <td>31445</td>
-                <td>Coxinha</td>
-                <td></td>
-                <td>31</td>
-            </tr>
-        </table>
+                <table class="produtos_disponiveis">
+                    <tr class="cabecalho_tabela">
+                        <th>ID do produto</th>
+                        <th>Nome do produto</th>
+                        <th></th>
+                        <th>Quantidade disponivel</th>
+                    </tr>
+                    <tr>
+                        <td>31445</td>
+                        <td>Coxinha</td>
+                        <td></td>
+                        <td>31</td>
+                    </tr>
+                    <tr>
+                        <td>31445</td>
+                        <td>Coxinha</td>
+                        <td></td>
+                        <td>31</td>
+                    </tr>
+                    <tr>
+                        <td>31445</td>
+                        <td>Coxinha</td>
+                        <td></td>
+                        <td>31</td>
+                    </tr>
+                </table>
                 `
                 break;
         
