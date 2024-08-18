@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Lilita+One&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Lilita+One&display=swap");
 * {
   margin: 0;
   padding: 0;
@@ -6,26 +6,23 @@
 }
 
 body {
-  font-family: 'Lilita One', cursive;
+  font-family: "Lilita One", cursive;
   background: #ff9460;
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
+  min-height: 120vh;
 }
-
 
 .header-container {
   width: 100%;
-  position: fixed;
   top: 0;
-  left: 50%;
-  transform: translateX(-50%);
+
   z-index: 1000;
 }
 
 .header {
-  background: #FF7A00;
-  padding: 10px;
+  background: #ff7a00;
+  padding: 0 auto;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -50,10 +47,10 @@ body {
 .nav {
   display: flex;
   justify-content: space-around;
-  background: #D96800;
-  padding: 30px;
+  background: #d96800;
+  padding: 10px;
   width: 100%;
-
+  margin-bottom: 10px;
 }
 
 .nav a {
@@ -62,18 +59,8 @@ body {
   font-size: 30px;
   transition: color 0.3s ease;
   cursor: pointer;
-  text-shadow: 
-  -1px -1px 0 #000,  
-  1px -1px 0 #000,  
-  -1px 1px 0 #000,  
-  1px 1px 0 #000; 
-  
-  
-  
-
-  
-  
-  
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
+    1px 1px 0 #000;
 }
 
 .nav a:hover {
@@ -86,67 +73,66 @@ body {
   font-size: 24px;
   font-family: cursive;
 }
-.menu{
+.menu {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 20px;
-  margin-top: 150px;
+  gap: 40px;
+  margin: 30px auto;
 }
-p{
+p {
   font-size: 40px;
   color: black;
   text-align: center;
   font-weight: bold;
   padding: 20px;
 }
-.valor{
+.valor {
   color: green !important;
 }
 
-button{
+button {
   font-size: 20px;
   color: white;
-  background-color: #FF7A00;
+  background-color: #ff7a00;
   padding: 20px;
   padding-left: 10px;
   border-radius: 15px;
   border: none;
   cursor: pointer;
 }
-.menu-item{
+.menu-item {
   background-color: white;
   width: 390px;
   border-radius: 35px;
   padding: 15px;
   text-align: center;
   transition: transform 0.3s ease;
-  margin-top: 150px;
-  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.2)
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.2);
 }
-.menu-item2{
-  background-color: white;
-  width: 390px;
-  border-radius: 35px;
-  padding: 15px;
-  margin-bottom: 40px;
-  text-align: center;
-  transition: transform 0.3s ease;
-  margin-top: -120px;
-  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.2)
-}
-.menu-item:hover{
-  transform: scale(1.050);
+
+.menu-item:hover {
+  transform: scale(1.05);
   cursor: pointer;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
   background-color: #f3efe6;
 }
-.menu-item2:hover{
-  transform: scale(1.050);
+
+img {
+  width: 350px;
+}
+.menu-item:hover {
+  transform: scale(1.05);
   cursor: pointer;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
   background-color: #f3efe6;
 }
-img{
+.menu-item2:hover {
+  transform: scale(1.05);
+  cursor: pointer;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  background-color: #f3efe6;
+}
+img {
   width: 350px;
 }

@@ -1,8 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Lilita+One&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Lilita+One&display=swap");
 
 * {
   margin: 0;
-  padding: 0;
+  font-family: "Lilita One", cursive;
 }
 
 a {
@@ -10,26 +10,62 @@ a {
 }
 
 body {
-  font-family: 'Lilita One', cursive;
-  background-color: #FFA500;
+  font-family: "Lilita One", cursive;
+  background-color: #ffa500;
   display: flex;
   font-size: bold;
 }
 
 .sidebar {
+  background-color: #d96800;
+  position: fixed;
+  top: 0;
+  display: flex;
   flex-direction: column;
-  max-width: 100%;
-  text-align: center;
-  width: 20%;
-  height: 200vh;
-  background-color: #FF7A00;
-  padding: 40px;
+  align-items: flex-start;
+  width: 350px;
+  height: 100%;
+  padding: 40px 10px 30px 10px;
+  box-shadow: 0 20px 20px rgba(0, 0, 0, 0.4);
+  border-right: #ffa500;
 }
 
-.logo {
+.sidebar-header {
   width: 100%;
-  max-width: 200px;
-  margin-bottom: 50px;
+  margin-bottom: 16px;
+}
+
+.logo-img {
+  width: 150px;
+  margin-left: 90px;
+}
+
+.sidebar button {
+  font-size: 18px;
+  border: none;
+  width: 100px;
+  height: 100px;
+  background-color: #ffce97;
+  cursor: pointer;
+  text-align: center;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+  transition: all 0.2s;
+  border-radius: 15px;
+}
+
+.sidebar button:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+}
+
+.sidebar nav {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  gap: 80px;
 }
 
 .carrinho {
@@ -57,14 +93,12 @@ body {
   transform: scale(1.05);
 }
 
-
 .main-content {
   width: 100%;
 }
 
-
 .promo-header {
-  background-color: #D96800;
+  background-color: #d96800;
   color: white;
   text-align: center;
   width: 100%;
@@ -74,26 +108,41 @@ body {
 }
 
 .promo-grid {
-    display: grid; 
-    grid-template-columns: repeat(3, 1fr); 
-    gap: 20px; 
-    justify-items: center; /* Centraliza os itens horizontalmente */
-    align-items: center; /* Centraliza os itens verticalmente */
+  width: 70%;
+  margin-left: 23%;
+  display: flex;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 50px;
+  justify-items: center; /* Centraliza os itens horizontalmente */
+  align-items: center; /* Centraliza os itens verticalmente */
+}
+.promo-grid2 {
+  width: 70%;
+  margin-left: 23%;
+  display: flex;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 50px;
+  justify-items: center; /* Centraliza os itens horizontalmente */
+  align-items: center; /* Centraliza os itens verticalmente */
+  margin-bottom: 50px;
 }
 
 .promo-item {
-  background-color: #FF9933;
+  background-color: white;
   width: 450px;
-  border-radius: 10px;
+  border-radius: 35px;
   padding: 15px;
   text-align: center;
   transition: transform 0.3s ease;
   margin-top: 30px;
-  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.2)
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.2);
 }
 
 .promo-item:hover {
   transform: scale(1.05);
+  cursor: pointer;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  background-color: #f3efe6;
 }
 
 .promo-image {
@@ -103,17 +152,12 @@ body {
 }
 
 .nome_produto {
-  color: white;
+  color: black;
   font-size: 28px;
   font-family: cursive;
 }
 
 @media (max-width: 1920px) {
-  .sidebar {
-    width: 40%;
-    height: 120vh;
-  }
-
   .promo-header {
     padding: 100px;
   }
@@ -124,15 +168,10 @@ body {
 
   .promo-grid {
     display: flex;
-    flex-direction: column;
   }
 }
 
 @media (max-width: 1440px) {
-  .sidebar {
-    width: 40%;
-  }
-
   .promo-header {
     padding: 100px;
   }
@@ -143,7 +182,6 @@ body {
 
   .promo-grid {
     display: flex;
-    flex-direction: column;
   }
 }
 
@@ -154,22 +192,19 @@ body {
     align-items: center;
     margin-left: 200px;
   }
-  
+
   .promo-header {
     padding: 100px;
   }
-  
+
   .promo-item {
     width: 600px;
   }
-  
+
   .promo-grid {
     display: flex;
-    flex-direction: column;
   }
 }
 
-
 @media (max-width: 480px) {
-  
 }
