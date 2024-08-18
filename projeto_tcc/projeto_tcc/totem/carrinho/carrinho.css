@@ -20,9 +20,14 @@ header {
     margin-bottom: 30px;
 }
 
-.logo {
-    width: 100px;
-    padding: 20px;
+.voltar{
+    margin-left: 20px;
+    border: none;
+    border-radius: 15px;
+    width: 70px;
+    padding: 10px;
+    font-size: 16px;
+    cursor: pointer;
 }
 
 .titulo {
