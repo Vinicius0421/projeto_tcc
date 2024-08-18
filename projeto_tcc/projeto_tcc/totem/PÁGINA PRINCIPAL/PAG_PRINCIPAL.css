@@ -112,6 +112,7 @@ body {
 }
 
 .promo-grid {
+<<<<<<< HEAD
     width: 70%;  
     margin-left: 23%;
     display: flex; 
@@ -129,6 +130,13 @@ body {
   justify-items: center; /* Centraliza os itens horizontalmente */
   align-items: center; /* Centraliza os itens verticalmente */ 
   margin-bottom: 50px;
+=======
+    display: grid; 
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 20px; 
+    justify-items: center; /* Centraliza os itens horizontalmente */
+    align-items: center; /* Centraliza os itens verticalmente */
+>>>>>>> main
 }
 
 .promo-item {
