@@ -1,6 +1,7 @@
 let carrinho = []
 
 document.addEventListener('DOMContentLoaded', () => {
+    // Adiciona Event Listeners e pega as informções dos produtos que serão adicionados ao carrinho
     const botoescarrinho = document.querySelectorAll('.adicionar_carrinho').forEach(button => {
         button.addEventListener('click', function(event) {
             event.preventDefault();
@@ -17,7 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
 })     
 
 function adicionarAoCarrinho(produto) {
-    //Funcão para buscar os dados de cada produto disponível no menu
+    // Verifica se o produto existe no carrinho antes de adicionar e adiciona
     const produtoExiste = carrinho.find(item => item.nome === produto.nome)
     if (produtoExiste){
         produtoExiste.quantity +=1
@@ -31,23 +32,14 @@ function adicionarAoCarrinho(produto) {
 
 
 function atualizarCarrinho() {
-    const itensCarrinho = document.querySelector('#carrinho');
+    const itensCarrinho = document.getElementById('carrinho');
     const totalCarrinho = document.getElementById('total');
 
     if (itensCarrinho){
         itensCarrinho.innerHTML = '';
         let total = 0
     }
-    carrinho.forEach(item => {
-        const div = document.createElement('div');
-        div.classList.add('img_nome_preco')
-        div.innerHTML = `
-        <img src="img/coxinha.png" alt="img_item" class="img_item">
-        <h3 class="nome_item">Coxinha</h3>
-        <p class="preco_item">4,50</p>
-        `
-    })
-}
+    }
 
 
 function salvarCarrinho(){
