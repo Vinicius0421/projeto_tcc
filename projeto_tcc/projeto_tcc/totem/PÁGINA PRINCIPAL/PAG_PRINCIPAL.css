@@ -1,8 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Lilita+One&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Lilita+One&display=swap");
 
 * {
   margin: 0;
-  font-family: 'Lilita One', cursive;
+  font-family: "Lilita One", cursive;
 }
 
 a {
@@ -10,14 +10,14 @@ a {
 }
 
 body {
-  font-family: 'Lilita One', cursive;
-  background-color: #FFA500;
+  font-family: "Lilita One", cursive;
+  background-color: #ffa500;
   display: flex;
   font-size: bold;
 }
 
-.sidebar{
-  background-color: #D96800;
+.sidebar {
+  background-color: #d96800;
   position: fixed;
   top: 0;
   display: flex;
@@ -27,22 +27,20 @@ body {
   height: 100%;
   padding: 40px 10px 30px 10px;
   box-shadow: 0 20px 20px rgba(0, 0, 0, 0.4);
-  border-right: #FFA500;
-  
+  border-right: #ffa500;
 }
 
-.sidebar-header{
+.sidebar-header {
   width: 100%;
   margin-bottom: 16px;
 }
 
-.logo-img{
+.logo-img {
   width: 150px;
   margin-left: 90px;
-
 }
 
-.sidebar button{
+.sidebar button {
   font-size: 18px;
   border: none;
   width: 100px;
@@ -55,12 +53,12 @@ body {
   border-radius: 15px;
 }
 
-.sidebar button:hover{
+.sidebar button:hover {
   background: rgba(255, 255, 255, 0.1);
   border-radius: 15px;
 }
 
-.sidebar nav{
+.sidebar nav {
   flex: 1 1 auto;
   display: flex;
   flex-direction: column;
@@ -95,14 +93,12 @@ body {
   transform: scale(1.05);
 }
 
-
 .main-content {
   width: 100%;
 }
 
-
 .promo-header {
-  background-color: #D96800;
+  background-color: #d96800;
   color: white;
   text-align: center;
   width: 100%;
@@ -112,31 +108,23 @@ body {
 }
 
 .promo-grid {
-<<<<<<< HEAD
-    width: 70%;  
-    margin-left: 23%;
-    display: flex; 
-    grid-template-columns: repeat(3, 1fr); 
-    gap: 50px; 
-    justify-items: center; /* Centraliza os itens horizontalmente */
-    align-items: center; /* Centraliza os itens verticalmente */ 
-}
-.promo-grid2{
-  width: 70%;  
+  width: 70%;
   margin-left: 23%;
-  display: flex; 
-  grid-template-columns: repeat(3, 1fr); 
-  gap: 50px; 
+  display: flex;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 50px;
   justify-items: center; /* Centraliza os itens horizontalmente */
-  align-items: center; /* Centraliza os itens verticalmente */ 
+  align-items: center; /* Centraliza os itens verticalmente */
+}
+.promo-grid2 {
+  width: 70%;
+  margin-left: 23%;
+  display: flex;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 50px;
+  justify-items: center; /* Centraliza os itens horizontalmente */
+  align-items: center; /* Centraliza os itens verticalmente */
   margin-bottom: 50px;
-=======
-    display: grid; 
-    grid-template-columns: repeat(3, 1fr); 
-    gap: 20px; 
-    justify-items: center; /* Centraliza os itens horizontalmente */
-    align-items: center; /* Centraliza os itens verticalmente */
->>>>>>> main
 }
 
 .promo-item {
@@ -147,11 +135,11 @@ body {
   text-align: center;
   transition: transform 0.3s ease;
   margin-top: 30px;
-  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.2)
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.2);
 }
 
 .promo-item:hover {
-  transform: scale(1.050);
+  transform: scale(1.05);
   cursor: pointer;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
   background-color: #f3efe6;
@@ -170,8 +158,6 @@ body {
 }
 
 @media (max-width: 1920px) {
-
-
   .promo-header {
     padding: 100px;
   }
@@ -182,12 +168,10 @@ body {
 
   .promo-grid {
     display: flex;
-    
   }
 }
 
 @media (max-width: 1440px) {
-
   .promo-header {
     padding: 100px;
   }
@@ -198,7 +182,6 @@ body {
 
   .promo-grid {
     display: flex;
-    
   }
 }
 
@@ -209,22 +192,19 @@ body {
     align-items: center;
     margin-left: 200px;
   }
-  
+
   .promo-header {
     padding: 100px;
   }
-  
+
   .promo-item {
     width: 600px;
   }
-  
+
   .promo-grid {
     display: flex;
-   
   }
 }
 
-
 @media (max-width: 480px) {
-  
 }
