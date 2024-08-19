@@ -18,13 +18,13 @@ function replaceHeader(request){
     document.getElementById("header").innerHTML = request.responseText
 }
 
-let itensCarrinho = JSON.parse(sessionStorage.getItem('carrinho'))[0] || []
+let itensCarrinho = JSON.parse(sessionStorage.getItem('carrinho')) || []
 
-let detalhesCarrinho = Object.entries(itensCarrinho)
-console.log(detalhesCarrinho)
+//let detalhesCarrinho = Object.values(itensCarrinho)
+console.log(itensCarrinho)
 
     function mostrarProdutos() {
-        detalhesCarrinho.forEach(element => {
+        itensCarrinho.forEach(element => {
         const produtoCarrinho = document.getElementById('carrinho');
         let div = document.createElement('div')
         let div2 = document.createElement('div')
@@ -40,9 +40,7 @@ console.log(detalhesCarrinho)
         let preco = detalhes.appendChild(p)
         preco.classList.add('preco_item')
         let nome = detalhes.appendChild(h3)
-        nome.classList.add('nome_item')
-        });
-        
+        nome.classList.add('nome_item')  
+    })
 }
-
 mostrarProdutos()

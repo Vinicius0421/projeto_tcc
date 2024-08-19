@@ -4,14 +4,13 @@ document.addEventListener('DOMContentLoaded', () => {
     // Adiciona Event Listeners e pega as informções dos produtos que serão adicionados ao carrinho
     const botoescarrinho = document.querySelectorAll('.adicionar_carrinho').forEach(button => {
         button.addEventListener('click', function(event) {
-            event.preventDefault();
+            ;
             const produtoSelecionado = this.closest('.menu-item');
             const produto = {
             nomeProduto: produtoSelecionado.querySelector('.nome_produto').textContent,
             imagemProduto: produtoSelecionado.querySelector('.imagem_produto').src,
             precoProduto: produtoSelecionado.querySelector('.valor').textContent
             };
-            console.log(produto)
             adicionarAoCarrinho(produto);
         });
     });
@@ -19,27 +18,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
 function adicionarAoCarrinho(produto) {
     // Verifica se o produto existe no carrinho antes de adicionar e adiciona
-    const produtoExiste = carrinho.find(item => item.nome === produto.nome)
+    const produtoExiste = carrinho.find(item => item.nomeProduto == produto.nomeProduto)
     if (produtoExiste){
         produtoExiste.quantity +=1
     } else {
         carrinho.push({ ...produto, quantity: 1})
     }
-
-    atualizarCarrinho();
+    console.log(carrinho)
     salvarCarrinho();
 }
 
-
-function atualizarCarrinho() {
-    const itensCarrinho = document.getElementById('carrinho');
-    const totalCarrinho = document.getElementById('total');
-
-    if (itensCarrinho){
-        itensCarrinho.innerHTML = '';
-        let total = 0
-    }
-    }
 
 
 function salvarCarrinho(){
