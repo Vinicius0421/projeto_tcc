@@ -4,14 +4,15 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Cardápio</title>
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="styles.css"/>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
   </head>
   <body>
     <div class="menu-container">
       <div class="header-container"> <!-- Novo contêiner para o header -->
         <div class="header">
           <img src="img/YummyFoods.png" alt="Yummy Food Logo" class="logo" />
-          <h1>CARDÁPIO</h1>
+          <h1 id="header">CARDÁPIO</h1>
         </div>
         <div class="nav">
           <a href="#">SALGADOS FRITOS</a>
@@ -23,63 +24,65 @@
 
       <div class="menu">
         <div class="menu-item">
-          <img src="img/666953cf-2fd5-48af-bc8f-f19bee417465.png" alt="Pastel Assado" />
-          <p>pastel assado</p>
+          <img src="img/666953cf-2fd5-48af-bc8f-f19bee417465.png" class="imagem_produto" alt="Pastel Assado" />
+          <p class="nome_produto" name="nome_produto">pastel assado</p>
           <p class="valor">R$ 5,00</p>
-          <button>Adicionar ao Carrinho</button>
+          <button class="adicionar_carrinho">Adicionar ao Carrinho</button>
           
         </div>
         <div class="menu-item">
-          <img src="img/666953cf-2fd5-48af-bc8f-f19bee417465.png" alt="Coxinha de Frango" />
-          <p>coxinha de frango</p>
+          <img src="img/666953cf-2fd5-48af-bc8f-f19bee417465.png" class="imagem_produto" alt="Coxinha de Frango" />
+          <p class="nome_produto" name="nome_produto">coxinha de frango</p>
           <p class="valor">R$ 5,00</p>
-          <button>Adicionar ao Carrinho</button>
+          <button class="adicionar_carrinho">Adicionar ao Carrinho</button>
         </div>
         <div class="menu-item">
-          <img src="img/666953cf-2fd5-48af-bc8f-f19bee417465.png" alt="Pastel Assado" />
-          <p>pastel assado</p>
+          <img src="img/666953cf-2fd5-48af-bc8f-f19bee417465.png" class="imagem_produto" alt="Pastel Assado" />
+          <p class="nome_produto" name="nome_produto">pastel assado</p>
           <p class="valor">R$ 5,00</p>
-          <button>Adicionar ao Carrinho</button>
+          <button class="adicionar_carrinho">Adicionar ao Carrinho</button>
           
         </div>
         <div class="menu-item">
-          <img src="img/666953cf-2fd5-48af-bc8f-f19bee417465.png" alt="Coxinha de Frango" />
-          <p>coxinha de frango</p>
+          <img src="img/666953cf-2fd5-48af-bc8f-f19bee417465.png" class="imagem_produto" alt="Coxinha de Frango" />
+          <p class="nome_produto" name="nome_produto">coxinha de frango</p>
           <p class="valor">R$ 5,00</p>
-          <button>Adicionar ao Carrinho</button>
+          <button class="adicionar_carrinho">Adicionar ao Carrinho</button>
         </div>
         <!-- Repita os itens do menu conforme necessário -->
       </div>
     </div>
     <div class="menu">
-      <div class="menu-item">
-        <img src="img/666953cf-2fd5-48af-bc8f-f19bee417465.png" alt="Pastel Assado" />
-        <p>pastel assado</p>
+      <div class="menu-item2">
+        <img src="img/666953cf-2fd5-48af-bc8f-f19bee417465.png" class="imagem_produto" alt="Pastel Assado" />
+        <p class="nome_produto" name="nome_produto">pastel assado</p>
         <p class="valor">R$ 5,00</p>
-        <button>Adicionar ao Carrinho</button>
+        <button class="adicionar_carrinho">Adicionar ao Carrinho</button>
         
       </div>
-      <div class="menu-item">
-        <img src="img/666953cf-2fd5-48af-bc8f-f19bee417465.png" alt="Coxinha de Frango" />
-        <p>coxinha de frango</p>
+      <div class="menu-item2">
+        <img src="img/666953cf-2fd5-48af-bc8f-f19bee417465.png" class="imagem_produto" alt="Coxinha de Frango" />
+        <p class="nome_produto" name="nome_produto">coxinha de frango</p>
         <p class="valor">R$ 5,00</p>
-        <button>Adicionar ao Carrinho</button>
+        <button class="adicionar_carrinho">Adicionar ao Carrinho</button>
       </div>
-      <div class="menu-item">
-        <img src="img/666953cf-2fd5-48af-bc8f-f19bee417465.png" alt="Pastel Assado" />
-        <p>pastel assado</p>
+      <div class="menu-item2">
+        <img src="img/666953cf-2fd5-48af-bc8f-f19bee417465.png" class="imagem_produto" alt="Pastel Assado" />
+        <p class="nome_produto" name="nome_produto">pastel assado</p>
         <p class="valor">R$ 5,00</p>
-        <button>Adicionar ao Carrinho</button>
+        <button class="adicionar_carrinho">Adicionar ao Carrinho</button>
         
       </div>
-      <div class="menu-item">
-        <img src="img/666953cf-2fd5-48af-bc8f-f19bee417465.png" alt="Coxinha de Frango" />
-        <p>coxinha de frango</p>
+      <div class="menu-item2">
+        <img src="img/666953cf-2fd5-48af-bc8f-f19bee417465.png" class="imagem_produto" alt="Coxinha de Frango" />
+        <p class="nome_produto" name="nome_produto">coxinha de frango</p>
         <p class="valor">R$ 5,00</p>
-        <button>Adicionar ao Carrinho</button>
+        <button class="adicionar_carrinho">Adicionar ao Carrinho</button>
       </div>
       <!-- Repita os itens do menu conforme necessário -->
     </div>
   </div>
+  <a href="/projeto_tcc/projeto_tcc/totem/carrinho/carrinho.html">sexozin</a>
   </body>
+  <script src="/projeto_tcc/scripts/index.js"></script>
 </html>
