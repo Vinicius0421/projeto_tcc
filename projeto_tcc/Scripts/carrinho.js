@@ -26,22 +26,39 @@ document.addEventListener('DOMContentLoaded', () =>{
         button.addEventListener("click", adicionarProduto)
     })
 })
+function calcularTotal(){
+    var total = 0
+     const itensCarrinho = document.querySelectorAll('.item').forEach(item => {
+        let detalheItens = item.querySelector('.img_nome_preco')
+        let quantidadeItens = item.querySelector('.add_delete')
+        let quantidadeUnitaria = quantidadeItens.getElementsByClassName('quant_item')[0].innerText
+        let precoUnitario = parseFloat(detalheItens.getElementsByClassName('preco_item')[0].innerText.replace("R$", "").replace(",", "."));
+        let subtotal = parseFloat(precoUnitario * quantidadeUnitaria)
+        total += subtotal
+    })
+    console.log(total);
+}
 
 function adicionarProduto (){
-    let quantidade = this.closest('.quant_item').innerText
-    quantidade = quantidade + 1
-    quantidade.textContent = quantidade
+    let produto = this.closest('.item')
+    let quantidade = produto.getElementsByClassName('quant_item')[0]
+    let x = parseFloat(quantidade.innerText)
+    x += 1
+    quantidade.innerHTML = `${x}`
+    calcularTotal()
 }
 
 function removerProduto (){
     let produto = this.closest('.item')
-    let quantidade = this.closest('.quant_item').innerText
-
-    if(quantidade == 1){
+    let quantidade = produto.getElementsByClassName('quant_item')[0]
+    let x = quantidade.innerText
+    if (x == 1){
         produto.remove()
     } else {
-        quantidade -= 1
+        x -= 1
+        quantidade.innerHTML = `${x}`
     }
+    calcularTotal()
 }
 
 
