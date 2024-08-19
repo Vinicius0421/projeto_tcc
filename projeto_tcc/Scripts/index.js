@@ -24,7 +24,6 @@ function adicionarAoCarrinho(produto) {
     } else {
         carrinho.push({ ...produto, quantity: 1})
     }
-    console.log(carrinho)
     salvarCarrinho();
 }
 
@@ -41,4 +40,3 @@ function carregarCarrinho(){
         carrinhoSalvo.JSON.parse(carrinhoSalvo);
     }
 }
-
