@@ -37,6 +37,9 @@ function calcularTotal(){
         total += subtotal
     })
     console.log(total);
+
+    let precoFinal = document.getElementById('total')
+    precoFinal.innerHTML = `${total}`
 }
 
 function adicionarProduto (){
