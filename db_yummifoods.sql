@@ -21,20 +21,25 @@ CREATE TABLE pedido (
  IDproduto int auto_increment not null PRIMARY KEY,
  nome_produto varchar(50) not null,
  preco_unitario decimal (10, 2) not null,
- quantidade int not null
+ quantidade int not null,
+ status boolean,
+ imagem blob
  );
+
  -- revisar os valores do varchar
  
  create table detalhes_pedido (
  id_pedido int  not null,
  id_produto int  not null,
- quantidade int not null
+ quantidade int not null,
+ foreign key (id_pedido) references pedido(IDpedido),
+ foreign key (id_produto) references produtos(IDproduto)
  );
  -- falta colocar as fk ^
  
  create table funcionarios(
  CPF_funcionario char(11) NOT NULL PRIMARY KEY,
- nome_funcionario varchar(80) not null,
+ nome_funcionario varchar(255) not null,
  email_funcionario varchar(255) not null,
  senha_funcionario varchar(255) not null
  );
@@ -50,8 +55,6 @@ CREATE TABLE pedido (
  
 
  
- 
-
 
 
 
