@@ -40,3 +40,19 @@ function carregarCarrinho(){
         carrinhoSalvo.JSON.parse(carrinhoSalvo);
     }
 }
+
+function fnAJAX(){
+    // Pedido do AJAX para puxar dados do servidor
+    const request = new XMLHttpRequest()
+    
+    request.onreadystatechange = function (){
+        //teste pra ver se a conexão do ajax foi bem sucedida
+        if(this.readyState == 4 && this.status == 200){
+            console.log(this.responseText)
+    }
+}
+    // Parâmetros de requisição e conexão do AJAX (true é para carregar de modo assíncrono)
+    request.open("GET", "/projeto_tcc/scripts/index.php", true);
+    request.send()
+}
+fnAJAX()
