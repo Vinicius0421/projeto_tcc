@@ -2,11 +2,11 @@
 
   require_once('conexao.php');
   
-  $produto = new stdClass();
-  $produto->nome = "coxinha";
-  $produto->preco = 30;
 
-    $produtoJSON = json_encode($produto);
+  $query = sprintf("SELECT nome_produto from produtos;");
+  $produtos = new stdClass();
+  $produtos->$query;
+  $produtoJSON = json_encode($produtos);
 
     echo $produtoJSON;
 ?>
