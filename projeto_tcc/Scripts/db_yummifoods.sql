@@ -38,6 +38,10 @@ CREATE TABLE pedido (
  email_funcionario varchar(255) not null,
  senha_funcionario varchar(255) not null
  );
+
+insert into produtos (nome_produto , preco_unitario)
+ VALUES ("coxinha", 5),
+ ("pastel assado", "4.5");
  
  describe cliente;
  describe detalhes_pedido;

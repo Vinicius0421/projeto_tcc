@@ -47,10 +47,11 @@ function fnAJAX(){
     
     request.onload = function (){
         //teste pra ver se a conexão do ajax foi bem sucedida
-        //if(this.readyState == 4 && this.status == 200){
+        if(this.readyState == 4 && this.status == 200){
             const obj = this.responseText
-            console.log(obj)
-    //}
+           // document.getElementById("header").innerHTML =
+           console.log(obj)
+    }
 }
     // Parâmetros de requisição e conexão do AJAX (true é para carregar de modo assíncrono)
     request.open("GET", "/projeto_tcc/scripts/index.php");
