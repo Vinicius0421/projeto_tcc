@@ -7,7 +7,6 @@
 </head>
 <body>
 <?php
-    echo("pinto");
     require('index.php');
  ?>
 </body>
