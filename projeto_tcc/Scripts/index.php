@@ -1,4 +1,7 @@
 <?php
+
+  require_once('conexao.php');
+  
   $produto = new stdClass();
   $produto->nome = "coxinha";
   $produto->preco = 30;
