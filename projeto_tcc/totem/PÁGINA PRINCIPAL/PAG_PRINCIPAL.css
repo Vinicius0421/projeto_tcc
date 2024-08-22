@@ -1,0 +1,175 @@
+@import url('https://fonts.googleapis.com/css2?family=Lilita+One&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+body {
+  font-family: 'Lilita One', cursive;
+  background-color: #FFA500;
+  display: flex;
+  font-size: bold;
+}
+
+.sidebar {
+  flex-direction: column;
+  max-width: 100%;
+  text-align: center;
+  width: 20%;
+  height: 200vh;
+  background-color: #FF7A00;
+  padding: 40px;
+}
+
+.logo {
+  width: 100%;
+  max-width: 200px;
+  margin-bottom: 50px;
+}
+
+.carrinho {
+  width: 70px;
+  max-width: 150px;
+  margin-top: 30px;
+}
+
+.category-menu {
+  list-style-type: none;
+  padding: 0;
+}
+
+.category-item {
+  color: white;
+  font-size: 24px;
+  margin-bottom: 250px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  padding: 10px 10px 10px 10px;
+  align-items: center;
+}
+
+.category-item:hover {
+  transform: scale(1.05);
+}
+
+
+.main-content {
+  width: 100%;
+}
+
+
+.promo-header {
+  background-color: #D96800;
+  color: white;
+  text-align: center;
+  width: 100%;
+  padding: 20px;
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+.promo-grid {
+    display: grid; 
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 20px; 
+    justify-items: center; /* Centraliza os itens horizontalmente */
+    align-items: center; /* Centraliza os itens verticalmente */
+}
+
+.promo-item {
+  background-color: #FF9933;
+  width: 450px;
+  border-radius: 10px;
+  padding: 15px;
+  text-align: center;
+  transition: transform 0.3s ease;
+  margin-top: 30px;
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.2)
+}
+
+.promo-item:hover {
+  transform: scale(1.05);
+}
+
+.promo-image {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.nome_produto {
+  color: white;
+  font-size: 28px;
+  font-family: cursive;
+}
+
+@media (max-width: 1920px) {
+  .sidebar {
+    width: 40%;
+    height: 120vh;
+  }
+
+  .promo-header {
+    padding: 100px;
+  }
+
+  .promo-item {
+    width: 600px;
+  }
+
+  .promo-grid {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 1440px) {
+  .sidebar {
+    width: 40%;
+  }
+
+  .promo-header {
+    padding: 100px;
+  }
+
+  .promo-item {
+    width: 600px;
+  }
+
+  .promo-grid {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 1080px) {
+  .promo-grid {
+    display: flex;
+    justify-items: center;
+    align-items: center;
+    margin-left: 200px;
+  }
+  
+  .promo-header {
+    padding: 100px;
+  }
+  
+  .promo-item {
+    width: 600px;
+  }
+  
+  .promo-grid {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+
+@media (max-width: 480px) {
+  
+}
