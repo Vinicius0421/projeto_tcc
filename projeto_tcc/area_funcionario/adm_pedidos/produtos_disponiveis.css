@@ -1,0 +1,37 @@
+.cabecalho_tabela {
+    background-color: #3f3f3f;
+    color: #ffffff;
+}
+
+table {
+    width: 100%; 
+    border-collapse: collapse;
+    background-color: #ffffff;
+    border: 1px solid;
+}
+
+th, td {
+    padding: 8px;
+    text-align: left;
+    border-top: 1px solid;
+    border-bottom: 1px solid;
+}
+
+.produtos_disponiveis th:first-child, td:first-child {
+    width: 20%; /* Largura da primeira coluna */
+    text-align: center;
+}
+
+.produtos_disponiveis th:nth-child(2), td:nth-child(2) {
+    width: 20%; /* Largura da segunda coluna */
+    text-align: center;
+}
+
+.produtos_disponiveis th:nth-child(3), td:nth-child(3) {
+    width: 40%; /* Largura da terceira coluna */
+}
+
+.produtos_disponiveis th:nth-child(4), td:nth-child(4) {
+    width: 20%; /* Largura da quarta coluna */
+    text-align: center;
+}

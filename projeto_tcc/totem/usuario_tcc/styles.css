@@ -1,0 +1,152 @@
+@import url('https://fonts.googleapis.com/css2?family=Lilita+One&display=swap');
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Lilita One', cursive;
+  background: #ff9460;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+
+.header-container {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+}
+
+.header {
+  background: #FF7A00;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 10px 10px 0 0;
+}
+
+.logo {
+  width: 150px;
+  margin-left: 10px;
+}
+
+.header h1 {
+  margin: 0;
+  flex-grow: 1;
+  text-align: center;
+  color: #ffffff;
+  font-size: 50px;
+  margin-right: 150px;
+}
+
+/* Navigation Styles */
+.nav {
+  display: flex;
+  justify-content: space-around;
+  background: #D96800;
+  padding: 30px;
+  width: 100%;
+
+}
+
+.nav a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 30px;
+  transition: color 0.3s ease;
+  cursor: pointer;
+  text-shadow: 
+  -1px -1px 0 #000,  
+  1px -1px 0 #000,  
+  -1px 1px 0 #000,  
+  1px 1px 0 #000; 
+  
+  
+  
+
+  
+  
+  
+}
+
+.nav a:hover {
+  color: #ffff89;
+  text-decoration: underline;
+}
+
+.nome_produto {
+  color: black;
+  font-size: 24px;
+  font-family: cursive;
+}
+.menu{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 150px;
+}
+p{
+  font-size: 40px;
+  color: black;
+  text-align: center;
+  font-weight: bold;
+  padding: 20px;
+}
+.valor{
+  color: green !important;
+}
+
+button{
+  font-size: 20px;
+  color: white;
+  background-color: #FF7A00;
+  padding: 20px;
+  padding-left: 10px;
+  border-radius: 15px;
+  border: none;
+  cursor: pointer;
+}
+.menu-item{
+  background-color: white;
+  width: 390px;
+  border-radius: 35px;
+  padding: 15px;
+  text-align: center;
+  transition: transform 0.3s ease;
+  margin-top: 150px;
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.2)
+}
+.menu-item2{
+  background-color: white;
+  width: 390px;
+  border-radius: 35px;
+  padding: 15px;
+  margin-bottom: 40px;
+  text-align: center;
+  transition: transform 0.3s ease;
+  margin-top: -120px;
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.2)
+}
+.menu-item:hover{
+  transform: scale(1.050);
+  cursor: pointer;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  background-color: #f3efe6;
+}
+.menu-item2:hover{
+  transform: scale(1.050);
+  cursor: pointer;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  background-color: #f3efe6;
+}
+img{
+  width: 350px;
+}

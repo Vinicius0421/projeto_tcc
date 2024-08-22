@@ -73,6 +73,7 @@ function mostrarProdutos() {
     nome.classList.add('nome_item') 
     preco.classList.add('preco_item')
     imagem.src = item.imagemProduto
+    console.log(item.imagemProduto)
     preco.innerHTML = `${item.precoProduto}`
     nome.innerHTML = `${item.nomeProduto}` 
     })
