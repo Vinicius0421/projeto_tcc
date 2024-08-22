@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 function adicionarAoCarrinho(produto) {
     // Verifica se o produto existe no carrinho antes de adicionar e adiciona
-    const produtoExiste = carrinho.find(item => item.nomeProduto.toLowerCase() == produto.nomeProduto.toLowerCase())
+    const produtoExiste = carrinho.find(item => item.nomeProduto == produto.nomeProduto)
     if (produtoExiste){
         produtoExiste.quantity +=1
     } else {
@@ -63,7 +63,7 @@ function mostrarProdutos(produtosExistentes){
         nomeProduto.classList.add('nome_produto')
         imgProduto.classList.add('img_produto')
         btnAdicionarAoCarrinho.classList.add('adicionar_carrinho')
-        nomeProduto.innerText = item.nome_produto.charAt(0).toUpperCase() + item.nome_produto.slice(1)
+        nomeProduto.innerText = item.nome_produto
         precoProduto.innerText = "R$ " + item.preco_unitario.replace(".", ",")
         imgProduto.src = `${item.imagem_produto}`
         btnAdicionarAoCarrinho.innerText = "Adicionar ao carrinho"
