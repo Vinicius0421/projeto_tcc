@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Carrinho</title>
     <link rel="stylesheet" href="carrinho.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 </head>
 <body>
     <header>
@@ -24,11 +25,10 @@
             </div>
             <div class="add_delete">
                 <button class="menos">-</button>
-                <button class="quant_item">1</button>
+                <p class="quant_item">1</p>
                 <button class="mais">+</button>
             </div>
         </div>
-
         <div class="item">
             <div class="img_nome_preco">
                 <img src="img/coxinha.png" alt="img_item" class="img_item">
@@ -37,16 +37,19 @@
             </div>
             <div class="add_delete">
                 <button class="menos">-</button>
-                <button class="quant_item">1</button>
+                <p class="quant_item">1</p>
                 <button class="mais">+</button>
             </div>
         </div>
-            <p class="total">Total: R$ 9,00</p>
-            
-            <div class="botoes">
-                <button class="cancelar">Cancelar Pedido</button>
-                <button class="finalizar">Forma de pagamento</button>
-            </div>
+        
+        <p id="total" class="total">Total: R$ 9,00</p>
+        
+        <div class="botoes">
+            <button class="cancelar">Cancelar Pedido</button>
+            <button class="finalizar">Forma de pagamento</button>
+        </div>
+
     </main>
 </body>
+    <script src="/projeto_tcc/scripts/carrinho.js"></script>
 </html>
