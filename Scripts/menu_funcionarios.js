@@ -1,23 +1,17 @@
-const botoesmenu = document.getElementsByClassName('menu_funcionarios');
+const botoesmenu = document.querySelectorAll('.menu_funcionarios').forEach(span => {
+    span.addEventListener("click", function(event){
 
-for (let i = 0; i < botoesmenu.length; i++) {
-    botoesmenu[i] = addEventListener("click", troca_pagina)
-}
-
-
-function troca_pagina(event){
         const botao = event.target;
-        console.log(botao)
         var paginatrocada = botao.innerText;
         console.log(paginatrocada)
-        var main = botao.parentElement.parentElement
+        var site = botao.parentElement.parentElement.parentElement
 
         
         switch (paginatrocada) {
             case 'Pedidos':
                 document.getElementsByTagName("main")[0].remove()
                 var novoconteudo = document.createElement("main");
-                main.appendChild(novoconteudo)
+                site.appendChild(novoconteudo)
                 novoconteudo.innerHTML = `
                 <table class="tabela_pedidos">
                     <tr class="cabecalho_tabela">
@@ -51,7 +45,7 @@ function troca_pagina(event){
             case 'Historico de pedidos':
                 document.getElementsByTagName("main")[0].remove()
                 novoconteudo = document.createElement("main");
-                main.appendChild(novoconteudo)
+                site.appendChild(novoconteudo)
                 novoconteudo.innerHTML = `
                 <table class="tabela_historico">
                     <tr class="cabecalho_tabela">
@@ -89,8 +83,7 @@ function troca_pagina(event){
             case 'Cadastro de produtos':
                 document.getElementsByTagName("main")[0].remove()
                 novoconteudo = document.createElement("main");
-                novoconteudo.classList.add("aba_cadastro");
-                main.appendChild(novoconteudo)
+                site.appendChild(novoconteudo)
                 novoconteudo.innerHTML = `
             
                 <div class="container">
@@ -129,40 +122,63 @@ function troca_pagina(event){
 
             case 'Produtos disponíveis':
                 document.getElementsByTagName("main")[0].remove()
-                novoconteudo = document.createElement("main");
-                main.appendChild(novoconteudo)
-                novoconteudo.innerHTML = `
-                <table class="produtos_disponiveis">
-                    <tr class="cabecalho_tabela">
-                        <th>ID do produto</th>
-                        <th>Nome do produto</th>
-                        <th></th>
-                        <th>Quantidade disponivel</th>
-                    </tr>
-                    <tr>
-                        <td>31445</td>
-                        <td>Coxinha</td>
-                        <td></td>
-                        <td>31</td>
-                    </tr>
-                    <tr>
-                        <td>31445</td>
-                        <td>Coxinha</td>
-                        <td></td>
-                        <td>31</td>
-                    </tr>
-                    <tr>
-                        <td>31445</td>
-                        <td>Coxinha</td>
-                        <td></td>
-                        <td>31</td>
-                    </tr>
-                </table>
-                `
+                fnAJAX()
                 break;
         
             default:
                 break;
         }
-        
+    })
+})
+
+function mostrarEstoque(produtosExistentes){
+    let produtos = JSON.parse(produtosExistentes);
+    console.log(produtos)
+    novoconteudo = document.createElement("main");
+    let site = document.getElementsByTagName("body")[0]
+    site.appendChild(novoconteudo)
+    let table = document.createElement('table')
+    table.classList.add("produtos_disponiveis")
+    novoconteudo.appendChild(table)
+    let tr = document.createElement('tr')
+    let cabecalhoTabela = table.appendChild(tr)
+    tr.classList.add('cabecalho_tabela')
+    cabecalhoTabela.innerHTML = `
+            <th>ID do produto</th>
+            <th>Nome do produto</th>
+            <th></th>
+            <th>Quantidade disponivel</th>`
+
+    produtos.forEach(item => {
+        let tr2 = document.createElement('tr')
+        let td1 = document.createElement('td')
+        let td2 = document.createElement('td')
+        let td3 = document.createElement('td')
+        let td4 = document.createElement('td')
+        table.appendChild(tr2)
+        let idProduto = tr2.appendChild(td1)
+        let nomeProduto = tr2.appendChild(td2)
+        tr2.appendChild(td3)
+        let quantidadeProduto =  tr2.appendChild(td4)
+        idProduto.innerText = item.IDproduto;
+        nomeProduto.innerText = item.nome_produto;
+        quantidadeProduto.innerText = item.quantidade;
+    })
+}
+
+function fnAJAX(){
+    // Pedido do AJAX para puxar dados do servidor
+    const request = new XMLHttpRequest()
+    
+    request.onload = function (){
+        //teste pra ver se a conexão do ajax foi bem sucedida
+        if(this.readyState == 4 && this.status == 200){
+            var produtosExistentes = this.responseText;
+            mostrarEstoque(produtosExistentes)
     }
+}
+    // Parâmetros de requisição e conexão do AJAX (true é para carregar de modo assíncrono)
+    request.open("GET", "/projeto_tcc/Scripts/index.php");
+    request.setRequestHeader("Content-Type", "application/x-www-form-urlencoded")
+    request.send()
+}

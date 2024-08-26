@@ -83,7 +83,7 @@ function fnAJAX(){
     }
 }
     // Parâmetros de requisição e conexão do AJAX (true é para carregar de modo assíncrono)
-    request.open("GET", "/scripts/index.php", true);
+    request.open("GET", "/projeto_tcc/Scripts/index.php", true);
     request.setRequestHeader("Content-Type", "application/x-www-form-urlencoded")
     request.send()
 }
