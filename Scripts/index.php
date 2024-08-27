@@ -1,5 +1,4 @@
 <?php
-  //$x = 2;
   require_once('conexao.php');
   $query = "select * from produtos";
   if( $result = $mysqli-> query($query, $result_mode =  MYSQLI_STORE_RESULT)){
