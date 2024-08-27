@@ -1,12 +1,10 @@
 const botoesmenu = document.querySelectorAll('.menu_funcionarios').forEach(span => {
     span.addEventListener("click", function(event){
-
         const botao = event.target;
         var paginatrocada = botao.innerText;
         console.log(paginatrocada)
         var site = botao.parentElement.parentElement.parentElement
 
-        
         switch (paginatrocada) {
             case 'Pedidos':
                 document.getElementsByTagName("main")[0].remove()
@@ -21,7 +19,6 @@ const botoesmenu = document.querySelectorAll('.menu_funcionarios').forEach(span 
                 novoconteudo = document.createElement("main");
                 site.appendChild(novoconteudo)
                 novoconteudo.innerHTML = `
-            
                 <div class="container">
                     <form method="post" action="...">
 
@@ -64,7 +61,6 @@ const botoesmenu = document.querySelectorAll('.menu_funcionarios').forEach(span 
         }
     })
 })
-
 function mostrarHistoricoPedidos(historicoPedidos){
     let historicoPedidos = JSON.parse(historicoPedidos)
     novoconteudo = document.createElement("main");
@@ -90,7 +86,6 @@ function mostrarHistoricoPedidos(historicoPedidos){
         let td3 = document.createElement('td')
         let td4 = document.createElement('td')
         let td5 = document.createElement('td')
-
         table.appendChild(tr2)
         let idPedido = tr2.appendChild(td1)
         let nomeCliente = tr2.appendChild(td2)
@@ -104,7 +99,6 @@ function mostrarHistoricoPedidos(historicoPedidos){
         horaPedido.innerText = item.hora_pedido;
     })
 }
-
 function mostrarPedidos(pedidosExistentes){
     let pedidos = JSON.parse(pedidosExistentes);
     novoconteudo = document.createElement("main");
@@ -128,7 +122,6 @@ function mostrarPedidos(pedidosExistentes){
         let td2 = document.createElement('td')
         let td3 = document.createElement('td')
         let td4 = document.createElement('td')
-
         table.appendChild(tr2)
         let idPedido = tr2.appendChild(td1)
         let nomeCliente = tr2.appendChild(td2)
@@ -138,9 +131,7 @@ function mostrarPedidos(pedidosExistentes){
         nomeCliente.innerText = item.nome_cliente;
         statusProduto.innerText = item.status_pedido;
     });
-
 }
-
 function mostrarEstoque(produtosExistentes){
     let produtos = JSON.parse(produtosExistentes);
     console.log(produtos)
@@ -158,7 +149,6 @@ function mostrarEstoque(produtosExistentes){
             <th>Nome do produto</th>
             <th></th>
             <th>Quantidade disponivel</th>`
-
     produtos.forEach(item => {
         let tr2 = document.createElement('tr')
         let td1 = document.createElement('td')
@@ -175,11 +165,9 @@ function mostrarEstoque(produtosExistentes){
         quantidadeProduto.innerText = item.quantidade;
     })
 }
-
 function fnAJAX(index, url){
     // Pedido do AJAX para puxar dados do servidor
     const request = new XMLHttpRequest()
-    
     request.onload = function (){
         //teste pra ver se a conexão do ajax foi bem sucedida
         if(this.readyState == 4 && this.status == 200){
