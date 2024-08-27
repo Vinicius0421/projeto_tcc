@@ -12,45 +12,10 @@ const botoesmenu = document.querySelectorAll('.menu_funcionarios').forEach(span 
                 document.getElementsByTagName("main")[0].remove()
                 fnAJAX(1, "/projeto_tcc/Scripts/pedidos.php")
                 break;
-
             case 'Historico de pedidos':
                 document.getElementsByTagName("main")[0].remove()
-                novoconteudo = document.createElement("main");
-                site.appendChild(novoconteudo)
-                novoconteudo.innerHTML = `
-                <table class="tabela_historico">
-                    <tr class="cabecalho_tabela">
-                        <th>Número do pedido</th>
-                        <th>Nome do Cliente</th>
-                        <th>Preço</th>
-                        <th>Data</th>
-                        <th>Hora</th>
-                    </tr>
-                    <tr>
-                        <td>22144</td>
-                        <td>João</td>
-                        <td>R$ 15,00</td>
-                        <td>07/11/2024</td>
-                        <td>16:53</td>
-                    </tr>
-                    <tr>
-                        <td>22144</td>
-                        <td>Maria</td>
-                        <td>R$ 15,00</td>
-                        <td>07/11/2024</td>
-                        <td>16:53</td>
-                    </tr>
-                    <tr>
-                        <td>22144</td>
-                        <td>João</td>
-                        <td>R$ 15,00</td>
-                        <td>07/11/2024</td>
-                        <td>16:53</td>
-                    </tr>
-                </table>
-                `
+                fnAJAX(2, "/projeto_tcc/Scripts/pedidos.php")
                 break;
-
             case 'Cadastro de produtos':
                 document.getElementsByTagName("main")[0].remove()
                 novoconteudo = document.createElement("main");
@@ -90,17 +55,56 @@ const botoesmenu = document.querySelectorAll('.menu_funcionarios').forEach(span 
                 </div>
                 `
                 break;
-
             case 'Produtos disponíveis':
                 document.getElementsByTagName("main")[0].remove()
                 fnAJAX(3, "/projeto_tcc/Scripts/index.php")
                 break;
-        
             default:
                 break;
         }
     })
 })
+
+function mostrarHistoricoPedidos(historicoPedidos){
+    let historicoPedidos = JSON.parse(historicoPedidos)
+    novoconteudo = document.createElement("main");
+    let site = document.getElementsByTagName('body')[0]
+    site.appendChild(novoconteudo)
+    let table = document.createElement('table')
+    table.classList.add('tabela_pedidos')
+    novoconteudo.appendChild(table)
+    let tr = document.createElement('tr')
+    let cabecalhoTabela = table.appendChild(tr)
+    tr.classList.add('cabecalho_tabela')
+    cabecalhoTabela.innerHTML = `
+    <th>Número do pedido</th>
+    <th>Nome do Cliente</th>
+    <th>Preço</th>
+    <th>Data</th>
+    <th>Hora</th>
+    `
+    historicoPedidos.forEach(item => {
+        let tr2 = document.createElement('tr')
+        let td1 = document.createElement('td')
+        let td2 = document.createElement('td')
+        let td3 = document.createElement('td')
+        let td4 = document.createElement('td')
+        let td5 = document.createElement('td')
+
+        table.appendChild(tr2)
+        let idPedido = tr2.appendChild(td1)
+        let nomeCliente = tr2.appendChild(td2)
+        let precoPedido = tr2.appendChild(td3)
+        let dataPedido =  tr2.appendChild(td4)
+        let horaPedido = tr2.appendChild(td5)
+        idPedido.innerText = item.IDpedido;
+        nomeCliente.innerText = item.nome_cliente;
+        precoPedido.innerText = item.preco_pedido;
+        dataPedido.innerText = item.data_pedido;
+        horaPedido.innerText = item.hora_pedido;
+    })
+}
+
 function mostrarPedidos(pedidosExistentes){
     let pedidos = JSON.parse(pedidosExistentes);
     novoconteudo = document.createElement("main");
@@ -180,19 +184,16 @@ function fnAJAX(index, url){
         //teste pra ver se a conexão do ajax foi bem sucedida
         if(this.readyState == 4 && this.status == 200){
             var obj = this.responseText;
-
-
             switch (index) {
                 case 1:
                     mostrarPedidos(obj)
                     break;
                 case 2:
-                    
+                    mostrarHistoricoPedidos(obj)
                     break;
                 case 3:
                     mostrarEstoque(obj)
                     break;
-            
                 default:
                     break;
             }
