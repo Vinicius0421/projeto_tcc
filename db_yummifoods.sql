@@ -45,6 +45,9 @@ CREATE TABLE pedido (
  describe pedido;
  describe produtos;
  
+ alter table produtos drop column status_pedido;
+ 
+ alter table pedido add column status_pedido boolean not null;
 
 
  
