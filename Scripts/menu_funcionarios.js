@@ -4,7 +4,6 @@ const botoesmenu = document.querySelectorAll('.menu_funcionarios').forEach(span 
         var paginatrocada = botao.innerText;
         console.log(paginatrocada)
         var site = botao.parentElement.parentElement.parentElement
-
         switch (paginatrocada) {
             case 'Pedidos':
                 document.getElementsByTagName("main")[0].remove()

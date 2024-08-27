@@ -20,7 +20,6 @@ function calcularTotal(){
     let precoFinal = document.getElementById('total')
     precoFinal.innerText ="Total: R$ " + total;
 }
-
 function adicionarProduto (){
     let produto = this.closest('.item')
     let quantidade = produto.getElementsByClassName('quant_item')[0]
@@ -29,7 +28,6 @@ function adicionarProduto (){
     quantidade.innerHTML = `${x}`
     calcularTotal()
 }
-
 function removerProduto (){
     let produto = this.closest('.item')
     let quantidade = produto.getElementsByClassName('quant_item')[0]
@@ -42,10 +40,7 @@ function removerProduto (){
     }
     calcularTotal()
 }
-
-
 let itensCarrinho = JSON.parse(sessionStorage.getItem('carrinho')) || []
-
 function mostrarProdutos() {
     itensCarrinho.forEach(item => {
     const produtoCarrinho = document.getElementById('carrinho');
@@ -78,6 +73,5 @@ function mostrarProdutos() {
     nome.innerHTML = `${item.nomeProduto}` 
     })
 }
-
 mostrarProdutos()
 calcularTotal()
