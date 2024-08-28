@@ -39,7 +39,6 @@ header h1 {
   text-align: center;
   color: #ffffff;
   font-size: 50px;
-  
 }
 
 img {
@@ -61,6 +60,7 @@ img {
   justify-content: center;
   align-items: center;
 }
+
 .carrinho-b:hover{
   transform: scale(1.05);
   cursor: pointer;
@@ -68,7 +68,6 @@ img {
   background-color: #ffa958;
 }
 
-/* Navigation Styles */
 .nav {
   display: flex;
   justify-content: space-around;
@@ -84,8 +83,7 @@ img {
   font-size: 30px;
   transition: color 0.3s ease;
   cursor: pointer;
-  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
-    1px 1px 0 #000;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
 }
 
 .nav a:hover {
@@ -98,6 +96,7 @@ img {
   font-size: 24px;
   font-family: cursive;
 }
+
 .menu {
   display: flex;
   flex-wrap: wrap; /* Permite que os itens quebrem linha */
@@ -106,6 +105,7 @@ img {
   gap: 40px;
   margin: 30px auto;
 }
+
 p {
   font-size: 40px;
   color: black;
@@ -113,6 +113,7 @@ p {
   font-weight: bold;
   padding: 20px;
 }
+
 .valor {
   color: green !important;
 }
@@ -127,6 +128,7 @@ button {
   border: none;
   cursor: pointer;
 }
+
 .menu-item {
   background-color: white;
   width: 390px;

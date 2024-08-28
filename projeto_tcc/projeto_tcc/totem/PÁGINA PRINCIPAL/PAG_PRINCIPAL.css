@@ -2,6 +2,7 @@
 
 * {
   margin: 0;
+  padding: 0;
   font-family: "Lilita One";
   box-sizing: border-box;
 }
@@ -13,30 +14,52 @@ body {
 }
 
 header {
-  justify-content: center;
+  margin-left: 200px;
   background-color: #ff7a00;
-  display: flex;
   color: white;
-  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: calc(100% - 200px); /* Largura do header considerando a sidebar */
   padding: 20px;
   font-size: 36px;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.4);
 }
 
 .sidebar {
+  align-items: center;
   background-color: #ff7a00;
   position: fixed;
   display: flex;
   flex-direction: column;
-  width: 350px;
+  width: 200px;
   height: 100%;
-  padding: 40px 10px 30px 10px;
-  border-right: #ffa500;
 }
 
-main {
+.container_logo {
+  margin-top: 20px; /* Espaçamento entre o header e o logo */
+}
+
+.logo-img {
+  width: 100px;
+}
+
+.sidebar nav {
+  flex: 1;
   display: flex;
-  flex-wrap: wrap; /* Permite que os itens quebrem linha */
+  flex-direction: column;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  gap: 80px;
+  margin-top: 20px; /* Espaçamento adicional para evitar que os botões fiquem colados ao logo */
+}
+
+
+main {
+  padding-left: 200px;
+  display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: center;
   gap: 40px;
@@ -48,17 +71,13 @@ a {
   text-decoration: none;
 }
 
-.logo-img {
-  width: 100px;
-  margin-left: 90px;
-}
-
 .sidebar button {
+  color: black;
   font-size: 18px;
   border: none;
   width: 100px;
   height: 100px;
-  background-color: #ffce97;
+  background-color: #ffe8ce;
   cursor: pointer;
   text-align: center;
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
@@ -72,6 +91,7 @@ a {
 }
 
 .sidebar nav {
+  padding-top: 20px;
   flex: 1 1 auto;
   display: flex;
   flex-direction: column;
@@ -100,7 +120,7 @@ button {
 
 .menu-item {
   background-color: white;
-  width: 390px;
+  width: 300px;
   border-radius: 35px;
   padding: 15px;
   text-align: center;
@@ -115,24 +135,28 @@ button {
   background-color: #f3efe6;
 }
 
-.nome_produto {
-  color: black;
-  font-size: 24px;
-  font-family: cursive;
+.img_produto {
+  width: 250px;
 }
 
-
-p {
-  font-size: 40px;
+.nome_produto {
   color: black;
-  text-align: center;
-  font-weight: bold;
-  padding: 20px;
+  font-size: 22px;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .valor {
   color: green !important;
+  font-size: 40px;
 }
+
+p {
+  color: black;
+  text-align: center;
+  font-weight: bold;
+  padding: 10px;
+}
+
 
 
 @media (max-width: 1920px) {
@@ -140,12 +164,51 @@ p {
 }
 
 @media (max-width: 1440px) {
+  header {
+    font-size: 28px;
+    padding: 16px;
+}
+
+.menu-item {
+    width: 260px;
+    padding: 12px;
+}
+
+.valor {
+    font-size: 34px;
+}
+
+.img_produto {
+    width: 230px;
+}
 
 }
 
 @media (max-width: 1080px) {
+  header {
+      font-size: 24px;
+      padding: 14px;
+  }
 
+  .menu-item {
+      width: 240px;
+      padding: 10px;
+  }
+
+  .valor {
+      font-size: 30px;
+  }
+
+  .img_produto {
+      width: 210px;
+  }
+
+  .sidebar button {
+      width: 90px;
+      height: 90px;
+  }
 }
 
 @media (max-width: 480px) {
+
 }
