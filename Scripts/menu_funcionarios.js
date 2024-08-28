@@ -40,7 +40,10 @@ const botoesmenu = document.querySelectorAll('.menu_funcionarios').forEach(span 
                             <option value="opcao3">Bebidas</option>
                             <option value="opcao4">Sobremesas</option>
                         </select>
-                        
+
+                        <label for="imagem_produto">Imagem</label>
+                        <input type="text" name="imagem" id="imagem">
+
                         <label for="descricao">Descrição:</label>
                         <br>
                         <textarea name="descricao" id="descricao" cols="35" rows="5"></textarea>
