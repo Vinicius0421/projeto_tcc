@@ -19,16 +19,16 @@ const botoesmenu = document.querySelectorAll('.menu_funcionarios').forEach(span 
                 site.appendChild(novoconteudo)
                 novoconteudo.innerHTML = `
                 <div class="container">
-                    <form method="post" action="...">
+                    <form method="post" action="/cadastrar_produto.php" enctype="multipart/form-data">
 
                         <div class="nome_e_valor">   
                             <div class="nome_do_produto">
                                 <label for="nome_produto">Nome do produto:</label>
-                                <input type="text" name="nome_produto" id="nome_produto" placeholder="Nome do produto">
+                                <input class="input_normal" type="text" name="nome_produto" id="nome_produto" placeholder="Nome do produto">
                             </div>
                             <div class="valor_do_produto">
                                 <label for="valor">Valor:</label>
-                                <input type="number" name="valor" id="valor" placeholder="Valor">
+                                <input class="input_normal" type="number" name="valor" id="valor" placeholder="Valor">
                             </div>
                         </div>
                         
@@ -41,8 +41,8 @@ const botoesmenu = document.querySelectorAll('.menu_funcionarios').forEach(span 
                             <option value="opcao4">Sobremesas</option>
                         </select>
 
-                        <label for="imagem_produto">Imagem</label>
-                        <input type="text" name="imagem" id="imagem">
+                        <label for="imagem_produto">Imagem:</label>
+                        <input class="input_imagem" type="file" name="imagem" id="imagem" placeholder="Imagem">
 
                         <label for="descricao">Descrição:</label>
                         <br>
