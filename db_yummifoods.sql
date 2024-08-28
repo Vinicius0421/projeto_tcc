@@ -42,7 +42,9 @@ CREATE TABLE pedido (
  email_funcionario varchar(255) not null,
  senha_funcionario varchar(255) not null
 
- alter table produtos drop column status_pedido
+ alter table produtos drop column status_pedido;
+
+ alter table pedido add column status_pedido boolean not null;
 
 
  
