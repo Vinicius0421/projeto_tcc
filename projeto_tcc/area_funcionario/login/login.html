@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tela de login</title>
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+    <img src="YummyFoods.png" alt="logo">
+    <div>
+        <h1>Login</h1>
+        <form method="post" action="/projeto_tcc/Scripts/login_funcionario.php">
+            <label for="cpf">CPF:</label>
+            <br>
+            <input type="text" id="cpf" name="cpf" placeholder="CPF">
+            <br><br>
+            <label for="senha">Senha:</label>
+            <br>
+            <input type="password" id="senha" name="senha" placeholder="Senha">
+            <br><br>
+            <input class="inputSubmit" type="submit" name="submit" value="Entrar">
+        </form>
+    </div>
+</body>
+</html>
