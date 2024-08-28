@@ -61,7 +61,7 @@ const botoesmenu = document.querySelectorAll('.menu_funcionarios').forEach(span 
     })
 })
 function mostrarHistoricoPedidos(historicoPedidos){
-    let historicoPedidos = JSON.parse(historicoPedidos)
+    historicoPedidos = JSON.parse(historicoPedidos)
     novoconteudo = document.createElement("main");
     let site = document.getElementsByTagName('body')[0]
     site.appendChild(novoconteudo)
