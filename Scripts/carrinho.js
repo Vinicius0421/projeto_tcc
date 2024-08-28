@@ -1,23 +1,3 @@
-function fnAJAX(url, fnctn){
-// Pedido do AJAX para puxar dados do servidor
-const request = new XMLHttpRequest()
-
-request.onreadystatechange = function (){
-    //teste pra ver se a conexão do ajax foi bem sucedida
-    if(this.readyState == 4 && this.status == 200){
-        fnctn(request)
-    }
-}
-
-// Parâmetros de requisição e conexão do AJAX (true é para carregar de modo assíncrono)
-request.open("GET", url, true);
-request.send()
-}
-
-//function replaceHeader(request){
-  //  document.getElementById("header").innerHTML = request.responseText
-//}
-
 document.addEventListener('DOMContentLoaded', () =>{
     document.querySelectorAll('.menos').forEach(button => {
         button.addEventListener("click", removerProduto)
@@ -26,27 +6,41 @@ document.addEventListener('DOMContentLoaded', () =>{
         button.addEventListener("click", adicionarProduto)
     })
 })
-
-function adicionarProduto (){
-    let quantidade = this.closest('.quant_item').innerText
-    quantidade = quantidade + 1
-    quantidade.textContent = quantidade
+function calcularTotal(){
+    var total = 0
+     const itensCarrinho = document.querySelectorAll('.item').forEach(item => {
+        let detalheItens = item.querySelector('.img_nome_preco')
+        let quantidadeItens = item.querySelector('.add_delete')
+        let quantidadeUnitaria = quantidadeItens.getElementsByClassName('quant_item')[0].innerText
+        let precoUnitario = parseFloat(detalheItens.getElementsByClassName('preco_item')[0].innerText.replace("R$", "").replace(",", "."));
+        let subtotal = parseFloat(precoUnitario * quantidadeUnitaria)
+        total += subtotal
+    })
+    console.log(total);
+    let precoFinal = document.getElementById('total')
+    precoFinal.innerText ="Total: R$ " + total;
 }
-
+function adicionarProduto (){
+    let produto = this.closest('.item')
+    let quantidade = produto.getElementsByClassName('quant_item')[0]
+    let x = parseFloat(quantidade.innerText)
+    x += 1
+    quantidade.innerHTML = `${x}`
+    calcularTotal()
+}
 function removerProduto (){
     let produto = this.closest('.item')
-    let quantidade = this.closest('.quant_item').innerText
-
-    if(quantidade == 1){
+    let quantidade = produto.getElementsByClassName('quant_item')[0]
+    let x = quantidade.innerText
+    if (x == 1){
         produto.remove()
     } else {
-        quantidade -= 1
+        x -= 1
+        quantidade.innerHTML = `${x}`
     }
+    calcularTotal()
 }
-
-
 let itensCarrinho = JSON.parse(sessionStorage.getItem('carrinho')) || []
-
 function mostrarProdutos() {
     itensCarrinho.forEach(item => {
     const produtoCarrinho = document.getElementById('carrinho');
@@ -74,9 +68,10 @@ function mostrarProdutos() {
     nome.classList.add('nome_item') 
     preco.classList.add('preco_item')
     imagem.src = item.imagemProduto
+    console.log(item.imagemProduto)
     preco.innerHTML = `${item.precoProduto}`
     nome.innerHTML = `${item.nomeProduto}` 
     })
 }
-
 mostrarProdutos()
+calcularTotal()

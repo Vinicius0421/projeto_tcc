@@ -38,29 +38,12 @@ CREATE TABLE pedido (
  email_funcionario varchar(255) not null,
  senha_funcionario varchar(255) not null
  );
+
+insert into produtos (nome_produto , preco_unitario, imagem_produto)
+ VALUES ("coxinha", 5, "http://localhost/projeto_tcc/projeto_tcc/totem/usuario_tcc/img/666953cf-2fd5-48af-bc8f-f19bee417465.png"),
+ ("pastel assado", "4.5", "http://localhost/projeto_tcc/projeto_tcc/totem/usuario_tcc/img/666953cf-2fd5-48af-bc8f-f19bee417465.png");
  
- describe cliente;
- describe detalhes_pedido;
- describe funcionarios;
- describe pedido;
- describe produtos;
+ alter table produtos
+ add imagem_produto varchar(255);
  
-
-
- 
-
- 
- 
-
-
-
-
-
-
-
-
-
-
-
-
-
+ delete from produtos where iDProduto = 4;

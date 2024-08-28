@@ -1,0 +1,155 @@
+@import url("https://fonts.googleapis.com/css2?family=Lilita+One&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Lilita One", cursive;
+  background: #ff9460;
+  display: flex;
+  flex-direction: column;
+  min-height: 120vh;
+}
+
+.header-container {
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+}
+
+header {
+  background: #ff7a00;
+  padding: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 10px 10px 0 0;
+}
+
+.logo {
+  width: 150px;
+  margin-left: 10px;
+}
+
+header h1 {
+  margin: 0;
+  flex-grow: 1;
+  text-align: center;
+  color: #ffffff;
+  font-size: 50px;
+  
+}
+
+img {
+  width: 350px;
+}
+
+.carrinho{
+  width: 50px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50% -50%);
+}
+
+.carrinho-b{
+  padding: 10px;
+  display: block;
+  background-color: #fa902d;
+  margin-right: 47.5px;
+  justify-content: center;
+  align-items: center;
+}
+.carrinho-b:hover{
+  transform: scale(1.05);
+  cursor: pointer;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  background-color: #ffa958;
+}
+
+/* Navigation Styles */
+.nav {
+  display: flex;
+  justify-content: space-around;
+  background: #fc7629;
+  padding: 10px;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.nav a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 30px;
+  transition: color 0.3s ease;
+  cursor: pointer;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
+    1px 1px 0 #000;
+}
+
+.nav a:hover {
+  color: #ffff89;
+  text-decoration: underline;
+}
+
+.nome_produto {
+  color: black;
+  font-size: 24px;
+  font-family: cursive;
+}
+.menu {
+  display: flex;
+  flex-wrap: wrap; /* Permite que os itens quebrem linha */
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  margin: 30px auto;
+}
+p {
+  font-size: 40px;
+  color: black;
+  text-align: center;
+  font-weight: bold;
+  padding: 20px;
+}
+.valor {
+  color: green !important;
+}
+
+button {
+  font-size: 20px;
+  color: white;
+  background-color: #ff7a00;
+  padding: 20px;
+  padding-left: 10px;
+  border-radius: 15px;
+  border: none;
+  cursor: pointer;
+}
+.menu-item {
+  background-color: white;
+  width: 390px;
+  border-radius: 35px;
+  padding: 15px;
+  text-align: center;
+  transition: transform 0.3s ease;
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.2);
+}
+
+.menu-item:hover {
+  transform: scale(1.05);
+  cursor: pointer;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  background-color: #f3efe6;
+}
+
+img {
+  width: 350px;
+}
+.menu-item:hover {
+  transform: scale(1.05);
+  cursor: pointer;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  background-color: #f3efe6;
+}
