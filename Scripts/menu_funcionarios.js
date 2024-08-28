@@ -19,7 +19,11 @@ const botoesmenu = document.querySelectorAll('.menu_funcionarios').forEach(span 
                 site.appendChild(novoconteudo)
                 novoconteudo.innerHTML = `
                 <div class="container">
+<<<<<<< Updated upstream
                     <form method="post" action="...">
+=======
+                    <form method="post" action="http://localhost/projeto_tcc/Scripts/cadastrar_produto.php" enctype="multipart/form-data">
+>>>>>>> Stashed changes
 
                         <div class="nome_e_valor">   
                             <div class="nome_do_produto">
