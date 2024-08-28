@@ -9,6 +9,15 @@ table {
     background-color: #ffffff;;
 }
 
+.check{
+    width: 20px;
+    margin-left: 10px;
+    background-color:#e4fcff ;
+    border-radius: 20px;
+    padding: 3px;
+    cursor: pointer;
+}
+
 th, td {
     padding: 8px;
     text-align: left;
