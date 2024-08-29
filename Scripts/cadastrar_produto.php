@@ -31,15 +31,15 @@
      
             // tenta mover o arquivo para o destino
             if ( @move_uploaded_file ( $arquivo_tmp, $destino ) ) {
-                echo 'Arquivo salvo com sucesso em : <strong>' . $destino . '</strong><br />';
+                echo 'Arquivo salvo com sucesso em : <strong>' . $destino . '</strong><br/>';
                 echo ' < img src = "' . $destino . '" />';
             }
             else
-                echo 'Erro ao salvar o arquivo. Aparentemente você não tem permissão de escrita.<br />';
+                echo 'Erro ao salvar o arquivo. Aparentemente você não tem permissão de escrita.<br/>';
         }
         else
-            echo 'Você poderá enviar apenas arquivos "*.jpg;*.jpeg;*.gif;*.png"<br />';
+            echo 'Você poderá enviar apenas arquivos "*.jpg;*.jpeg;*.gif;*.png"<br/>';
     }
     else
-        echo 'Você não enviou nenhum arquivo!';;
+        echo 'Você não enviou nenhum arquivo!';
 ?>
