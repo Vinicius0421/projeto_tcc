@@ -1,17 +1,12 @@
-<<<<<<< HEAD
 * {
-=======
-body {
-    font-family: Arial, sans-serif;
-    background-color: #000000;
->>>>>>> main
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 body {
     font-family: Arial, sans-serif;
-    background-color: #FFF6A5;
+    background-color: #000000;
 }
 
 img {

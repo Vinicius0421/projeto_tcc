@@ -3,7 +3,7 @@
 }
 
 .container {
-    margin: 0 auto;
+    margin: 100px auto;
     width: 500px;
     padding: 30px;
     background-color: #8C8C8C;
@@ -20,7 +20,7 @@
 }
 
 label {
-    font-size: 18px;
+    font-size: 16px;
 }
 
 input, select, textarea, button {
@@ -30,7 +30,9 @@ input, select, textarea, button {
 }
 
 input, select, textarea {
+    padding-left: 5px;
     width: 100%;
+    height: 30px;
     border-radius: 5px;
     border: none;
 }
@@ -39,9 +41,8 @@ select {
     height: 27px;
 }
 
-input {
+.input_normal {
     width: 200px;
-    height: 25px;
     padding: 5px;
 }
 
