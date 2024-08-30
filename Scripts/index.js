@@ -1,11 +1,9 @@
+document.addEventListener('DOMContentLoaded', function(event){
 let carrinho = []
-let produtosExistentes = []
 
-document.addEventListener('DOMContentLoaded', () => {
     // Adiciona Event Listeners e pega as informções dos produtos que serão adicionados ao carrinho
     const botoescarrinho = document.querySelectorAll('.adicionar_carrinho').forEach(button => {
         button.addEventListener('click', function(event) {
-            ;
             const produtoSelecionado = this.closest('.menu-item');
             const produto = {
             nomeProduto: produtoSelecionado.querySelector('.nome_produto').textContent,
@@ -13,9 +11,10 @@ document.addEventListener('DOMContentLoaded', () => {
             precoProduto: produtoSelecionado.querySelector('.valor').textContent
             };
             adicionarAoCarrinho(produto);
+            console.log(produto)
         });
     });
-})     
+    
 
 function adicionarAoCarrinho(produto) {
     // Verifica se o produto existe no carrinho antes de adicionar e adiciona
@@ -29,24 +28,23 @@ function adicionarAoCarrinho(produto) {
 }
 
 
-
+// Salva o carrinho
 function salvarCarrinho(){
     sessionStorage.setItem('carrinho', JSON.stringify(carrinho));
 }
 
-
+// Carrega o carrinho
 function carregarCarrinho(){
     const carrinhoSalvo = sessionStorage.getItem('carrinho');
     if(carrinhoSalvo){
         carrinhoSalvo.JSON.parse(carrinhoSalvo);
     }
 }
-
+//Mostra os produtos puxados do banco de dados
 function mostrarProdutos(produtosExistentes){
     let produtos = JSON.parse(produtosExistentes)
     console.log(produtos)
     produtos.forEach(item => {
-        if(item.quantidade > 0){
         let div = document.createElement("div");
         let a = document.getElementsByClassName("menu-container")[0]
         let menu = a.getElementsByClassName('menu')[0]
@@ -61,16 +59,14 @@ function mostrarProdutos(produtosExistentes){
         let btnAdicionarAoCarrinho = produto.appendChild(btn)
         produto.classList.add('menu-item')
         precoProduto.classList.add("valor")
-        //nomeProduto.classList.add('nome_produto')
-        imgProduto.classList.add('img_produto')
+        imgProduto.classList.add('imagem_produto')
+        nomeProduto.classList.add('nome_produto')
         btnAdicionarAoCarrinho.classList.add('adicionar_carrinho')
         nomeProduto.innerText = item.nome_produto
         precoProduto.innerText = "R$ " + item.preco_unitario.replace(".", ",")
         imgProduto.src = `${item.imagem}`
         btnAdicionarAoCarrinho.innerText = "Adicionar ao carrinho"
-    }
-    });
-   
+    });  
 }
 
 function fnAJAX(){
@@ -90,3 +86,5 @@ function fnAJAX(){
     request.send()
 }
 fnAJAX()
+carregarCarrinho()
+}) 

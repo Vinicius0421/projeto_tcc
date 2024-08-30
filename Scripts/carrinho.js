@@ -1,3 +1,5 @@
+let itensCarrinho = JSON.parse(sessionStorage.getItem('carrinho')) || []
+
 document.addEventListener('DOMContentLoaded', () =>{
     document.querySelectorAll('.menos').forEach(button => {
         button.addEventListener("click", removerProduto)
@@ -16,7 +18,6 @@ function calcularTotal(){
         let subtotal = parseFloat(precoUnitario * quantidadeUnitaria)
         total += subtotal
     })
-    console.log(total);
     let precoFinal = document.getElementById('total')
     precoFinal.innerText ="Total: R$ " + total;
 }
@@ -40,7 +41,7 @@ function removerProduto (){
     }
     calcularTotal()
 }
-let itensCarrinho = JSON.parse(sessionStorage.getItem('carrinho')) || []
+console.log(itensCarrinho)
 function mostrarProdutos() {
     itensCarrinho.forEach(item => {
     const produtoCarrinho = document.getElementById('carrinho');
@@ -68,7 +69,6 @@ function mostrarProdutos() {
     nome.classList.add('nome_item') 
     preco.classList.add('preco_item')
     imagem.src = item.imagemProduto
-    console.log(item.imagemProduto)
     preco.innerHTML = `${item.precoProduto}`
     nome.innerHTML = `${item.nomeProduto}` 
     })
