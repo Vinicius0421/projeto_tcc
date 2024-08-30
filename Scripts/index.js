@@ -1,20 +1,21 @@
-document.addEventListener('DOMContentLoaded', function(event){
+window.addEventListener('DOMContentLoaded', function(event){
 let carrinho = []
 
     // Adiciona Event Listeners e pega as informções dos produtos que serão adicionados ao carrinho
-    const botoescarrinho = document.querySelectorAll('.adicionar_carrinho').forEach(button => {
-        button.addEventListener('click', function(event) {
-            const produtoSelecionado = this.closest('.menu-item');
-            const produto = {
-            nomeProduto: produtoSelecionado.querySelector('.nome_produto').textContent,
-            imagemProduto: produtoSelecionado.querySelector('.imagem_produto').src,
-            precoProduto: produtoSelecionado.querySelector('.valor').textContent
-            };
-            adicionarAoCarrinho(produto);
-            console.log(produto)
-        });
+    const botoescarrinho = document.querySelectorAll('.adicionar_carrinho').forEach(button=> {
+    button.addEventListener('click', puxarDados) 
     });
-    
+
+function puxarDados(event){
+    const produtoSelecionado = this.closest('.menu-item');
+    const produto = {
+    nomeProduto: produtoSelecionado.querySelector('.nome_produto').textContent,
+    imagemProduto: produtoSelecionado.querySelector('.imagem_produto').src,
+    precoProduto: produtoSelecionado.querySelector('.valor').textContent
+    };
+    adicionarAoCarrinho(produto);
+    console.log(produto)
+}
 
 function adicionarAoCarrinho(produto) {
     // Verifica se o produto existe no carrinho antes de adicionar e adiciona
@@ -57,6 +58,7 @@ function mostrarProdutos(produtosExistentes){
         let nomeProduto = produto.appendChild(p)
         let precoProduto = produto.appendChild(p2)
         let btnAdicionarAoCarrinho = produto.appendChild(btn)
+        btnAdicionarAoCarrinho.addEventListener("click", puxarDados)
         produto.classList.add('menu-item')
         precoProduto.classList.add("valor")
         imgProduto.classList.add('imagem_produto')
@@ -86,5 +88,4 @@ function fnAJAX(){
     request.send()
 }
 fnAJAX()
-carregarCarrinho()
 }) 
