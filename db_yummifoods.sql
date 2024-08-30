@@ -23,7 +23,8 @@ CREATE TABLE pedido (
  nome_produto varchar(255) not null,
  preco_unitario decimal (10, 2) not null,
  quantidade int not null,
- imagem varchar(255) not null
+ imagem varchar(255) not null,
+ tipo_produto varchar(60)
  )engine=InnoDB default charset=utf8mb4;
  
  

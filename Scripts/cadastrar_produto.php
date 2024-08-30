@@ -1,13 +1,6 @@
 <?php
     include_once('conexao.php');
-
-    //$destino = "projeto_tcc/totem/usuario_tcc/img/" . $_FILES['file']['nome'];
     if ( isset( $_FILES[ 'imagem' ][ 'name' ] ) && $_FILES[ 'imagem' ][ 'error' ] == 0 ) {
-        echo 'Você enviou o arquivo: <strong>' . $_FILES[ 'imagem' ][ 'name' ] . '</strong><br />';
-        echo 'Este arquivo é do tipo: <strong > ' . $_FILES[ 'imagem' ][ 'type' ] . ' </strong ><br />';
-        echo 'Temporáriamente foi salvo em: <strong>' . $_FILES[ 'imagem' ][ 'tmp_name' ] . '</strong><br />';
-        echo 'Seu tamanho é: <strong>' . $_FILES[ 'imagem' ][ 'size' ] . '</strong> Bytes<br /><br />';
-     
         $arquivo_tmp = $_FILES[ 'imagem' ][ 'tmp_name' ];
         $nome = $_FILES[ 'imagem' ][ 'name' ];
      
@@ -27,12 +20,19 @@
             $novoNome = uniqid ( time () ) . '.' . $extensao;
      
             // Concatena a pasta com o nome
-            $destino = 'imagens / ' . $novoNome;
+            $destino = "C:/wamp64/www/projeto_tcc/projeto_tcc/totem/usuario_tcc/img/" . $novoNome;
+            $destinoModificado = substr($destino, 13);
      
             // tenta mover o arquivo para o destino
             if ( @move_uploaded_file ( $arquivo_tmp, $destino ) ) {
-                echo 'Arquivo salvo com sucesso em : <strong>' . $destino . '</strong><br/>';
-                echo ' < img src = "' . $destino . '" />';
+                $nome_produto = $_POST['nome_produto'];
+                $preco_produto = $_POST['valor'];
+                $categoria_produto = $_POST['categoria'];
+                $quantidade = $_POST['quantidade'];
+
+                $query = "INSERT INTO produtos (nome_produto, preco_unitario, quantidade, tipo_produto, imagem) VALUES ('$nome_produto', '$preco_produto', '$quantidade', '$categoria_produto', '$destinoModificado')";
+                $queryResult = $mysqli->query($query) or die("erro");
+                header("Location: http://localhost/projeto_tcc/projeto_tcc/area_funcionario/adm_pedidos/");
             }
             else
                 echo 'Erro ao salvar o arquivo. Aparentemente você não tem permissão de escrita.<br/>';

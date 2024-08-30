@@ -28,22 +28,25 @@ const botoesmenu = document.querySelectorAll('.menu_funcionarios').forEach(span 
                             </div>
                             <div class="valor_do_produto">
                                 <label for="valor">Valor:</label>
-                                <input type="number" name="valor" id="valor" placeholder="Valor">
+                                <input type="text" name="valor" id="valor" placeholder="Valor">
                             </div>
                         </div>
                         
                         <label for="categoria">Categoria:</label>
                         <select name="categoria" id="categoria">
                             <option value="">Selecione...</option>
-                            <option value="opcao1">Fritos</option>
-                            <option value="opcao2">Assados</option>
-                            <option value="opcao3">Bebidas</option>
-                            <option value="opcao4">Sobremesas</option>
+                            <option value="fritos">Fritos</option>
+                            <option value="assados">Assados</option>
+                            <option value="bebidas">Bebidas</option>
+                            <option value="sobremesas">Sobremesas</option>
                         </select>
-                        
-                        <label for="descricao">Descrição:</label>
+
+                        <label for="imagem_produto">Imagem:</label>
+                        <input class="input_imagem" type="file" name="imagem" id="imagem" placeholder="Imagem">
                         <br>
-                        <textarea name="descricao" id="descricao" cols="35" rows="5"></textarea>
+                        <label for="Quantidade">Quantidade</label>
+                        <br>
+                        <input type="number" name="quantidade" id="quantidade" placeholder="quantidade">
                         <div class="botao">
                             <button type="submit">Cadastrar produto</button>
                         </div>

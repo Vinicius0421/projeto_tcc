@@ -46,6 +46,7 @@ function mostrarProdutos(produtosExistentes){
     let produtos = JSON.parse(produtosExistentes)
     console.log(produtos)
     produtos.forEach(item => {
+        if(item.quantidade > 0){
         let div = document.createElement("div");
         let a = document.getElementsByClassName("menu-container")[0]
         let menu = a.getElementsByClassName('menu')[0]
@@ -60,13 +61,14 @@ function mostrarProdutos(produtosExistentes){
         let btnAdicionarAoCarrinho = produto.appendChild(btn)
         produto.classList.add('menu-item')
         precoProduto.classList.add("valor")
-        nomeProduto.classList.add('nome_produto')
+        //nomeProduto.classList.add('nome_produto')
         imgProduto.classList.add('img_produto')
         btnAdicionarAoCarrinho.classList.add('adicionar_carrinho')
         nomeProduto.innerText = item.nome_produto
         precoProduto.innerText = "R$ " + item.preco_unitario.replace(".", ",")
-        imgProduto.src = `${item.imagem_produto}`
+        imgProduto.src = `${item.imagem}`
         btnAdicionarAoCarrinho.innerText = "Adicionar ao carrinho"
+    }
     });
    
 }
@@ -83,7 +85,7 @@ function fnAJAX(){
     }
 }
     // Parâmetros de requisição e conexão do AJAX (true é para carregar de modo assíncrono)
-    request.open("GET", "/projeto_tcc/Scripts/index.php", true);
+    request.open("POST", "/projeto_tcc/Scripts/index.php", true);
     request.setRequestHeader("Content-Type", "application/x-www-form-urlencoded")
     request.send()
 }
