@@ -45,7 +45,6 @@ function carregarCarrinho(){
 //Mostra os produtos puxados do banco de dados
 function mostrarProdutos(produtosExistentes){
     let produtos = JSON.parse(produtosExistentes)
-    console.log(produtos)
     produtos.forEach(item => {
         let div = document.createElement("div");
         let a = document.getElementsByClassName("menu-container")[0]
