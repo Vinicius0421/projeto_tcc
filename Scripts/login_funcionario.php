@@ -7,8 +7,10 @@
     if(isset($_POST['cpf']) || isset($_POST['senha'])){
         if(strlen($_POST['cpf']) == 0){
             echo "<script>alert('Preencha seu CPF.');</script>";
+            header("Location: /projeto_tcc/projeto_tcc/area_funcionario/login/login.html");
         }  else if (strlen($_POST['senha']) == 0){
-            echo "<script>alert('Preencha sua senha.');</script>";
+            echo "<p>Preencha sua senha.</p>";
+            header("Location: /projeto_tcc/projeto_tcc/area_funcionario/login/login.html");
         } else {
         $cpfFuncionario = $mysqli->real_escape_string($_POST['cpf']);
         $senhaFuncionario = $mysqli->real_escape_string($_POST['senha']);
@@ -26,8 +28,6 @@
 
             $_SESSION['cpf'] = $usuario['CPF_funcionario'];
             $_SESSION['senha'] = $usuario['senha_funcionario'];
-
-            header("Location: \projeto_tcc\area_funcionario\adm_pedidos\index.html");
             header("Location: /projeto_tcc/projeto_tcc/area_funcionario/adm_pedidos/");
         } else {
             echo "<script>alert('Erro');</script>";
