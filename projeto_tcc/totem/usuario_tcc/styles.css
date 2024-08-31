@@ -78,7 +78,7 @@ img {
   margin-bottom: 10px;
 }
 
-.nav a {
+.nav span {
   color: #ffffff;
   text-decoration: none;
   font-size: 30px;
@@ -88,7 +88,7 @@ img {
     1px 1px 0 #000;
 }
 
-.nav a:hover {
+.nav span:hover {
   color: #ffff89;
   text-decoration: underline;
 }

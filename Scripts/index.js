@@ -41,6 +41,7 @@ function carregarCarrinho(){
         carrinhoSalvo.JSON.parse(carrinhoSalvo);
     }
 }
+
 //Mostra os produtos puxados do banco de dados
 function mostrarProdutos(produtosExistentes){
     let produtos = JSON.parse(produtosExistentes)
