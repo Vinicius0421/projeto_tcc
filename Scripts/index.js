@@ -34,17 +34,34 @@ function salvarCarrinho(){
     sessionStorage.setItem('carrinho', JSON.stringify(carrinho));
 }
 
-// Carrega o carrinho
-function carregarCarrinho(){
-    const carrinhoSalvo = sessionStorage.getItem('carrinho');
-    if(carrinhoSalvo){
-        carrinhoSalvo.JSON.parse(carrinhoSalvo);
-    }
-}
+
+    document.querySelectorAll('.categoria').forEach(span => {
+        span.addEventListener('click', function(event){
+            let categoria = span.innerText
+            switch (categoria) {
+                case 'SALGADOS FRITOS':
+                    mostrarProdutos(salgadosFritos)
+                    break;
+                case 'SALGADOS ASSADOS':
+                    mostrarProdutos(salgadosAssados)
+                    break;
+                case 'BEBIDAS':
+                    mostrarProdutos(bebidas)
+                    break;
+                case 'SOBREMESAS':
+                    mostrarProdutos(sobremesas)
+                    break;
+                default:
+                    mostrarProdutos(produtosExistentes)
+                    break;
+            }
+        })
+    })
+
 
 //Mostra os produtos puxados do banco de dados
 function mostrarProdutos(produtosExistentes){
-    let produtos = JSON.parse(produtosExistentes)
+    let produtos = produtosExistentes
     produtos.forEach(item => {
         let div = document.createElement("div");
         let a = document.getElementsByClassName("menu-container")[0]
@@ -71,6 +88,30 @@ function mostrarProdutos(produtosExistentes){
     });  
 }
 
+function parseCategorias(produtosExistentes){
+    var salgadosFritos = []
+    var salgadosAssados = []
+    var bebidas = []
+    var sobremesas = []
+
+    produtosExistentes.forEach(item => {
+            switch (item.tipo_produto) {
+                case 'fritos':
+                    salgadosFritos = item
+                    break;
+                case 'assados':
+                    salgadosAssados = item
+                    break;
+                case 'bebidas':
+                    bebidas = item
+                    break;
+                case 'sobremesas':
+                    sobremesas = item
+                    break;
+                default:
+                    break;
+            }
+        });}
 function fnAJAX(){
     // Pedido do AJAX para puxar dados do servidor
     const request = new XMLHttpRequest()
@@ -78,8 +119,9 @@ function fnAJAX(){
     request.onload = function (){
         //teste pra ver se a conexão do ajax foi bem sucedida
         if(this.readyState == 4 && this.status == 200){
-            produtosExistentes = this.responseText;
-            mostrarProdutos(produtosExistentes);
+             var produtosExistentes = JSON.parse(this.responseText);
+            parseCategorias(produtosExistentes);
+            mostrarProdutos(produtosExistentes)
     }
 }
     // Parâmetros de requisição e conexão do AJAX (true é para carregar de modo assíncrono)
@@ -88,4 +130,4 @@ function fnAJAX(){
     request.send()
 }
 fnAJAX()
-}) 
+})
