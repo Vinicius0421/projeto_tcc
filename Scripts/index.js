@@ -1,9 +1,9 @@
 window.addEventListener('DOMContentLoaded', function(event){
 let carrinho = []
-var salgadosFritos = []
-var salgadosAssados = []
-var bebidas = []
-var sobremesas = []
+let salgadosFritos = []
+let salgadosAssados = []
+let bebidas = []
+let sobremesas = []
 
     // Adiciona Event Listeners e pega as informções dos produtos que serão adicionados ao carrinho
     const botoescarrinho = document.querySelectorAll('.adicionar_carrinho').forEach(button=> {
@@ -44,15 +44,19 @@ function salvarCarrinho(){
             let categoria = span.innerText
             switch (categoria) {
                 case 'SALGADOS FRITOS':
+                    document.getElementById('menu').innerHTML = ""
                     mostrarProdutos(salgadosFritos)
                     break;
                 case 'SALGADOS ASSADOS':
+                    document.getElementById('menu').innerHTML = ""
                     mostrarProdutos(salgadosAssados)
                     break;
                 case 'BEBIDAS':
+                    document.getElementById('menu').innerHTML = ""
                     mostrarProdutos(bebidas)
                     break;
                 case 'SOBREMESAS':
+                    document.getElementById('menu').innerHTML = ""
                     mostrarProdutos(sobremesas)
                     break;
                 default:
@@ -93,26 +97,32 @@ function mostrarProdutos(produtosExistentes){
 }
 
 function parseCategorias(produtosExistentes){
-
-
-    produtosExistentes.forEach(item => {
+    let produtos = produtosExistentes
+    produtos.forEach(item => {
             switch (item.tipo_produto) {
                 case 'fritos':
-                    salgadosFritos = item
+                    salgadosFritos.push(item)
                     break;
                 case 'assados':
-                    salgadosAssados = item
+                    salgadosAssados.push(item)
                     break;
                 case 'bebidas':
-                    bebidas = item
+                    bebidas.push(item)
                     break;
                 case 'sobremesas':
-                    sobremesas = item
+                    sobremesas.push(item)
                     break;
                 default:
                     break;
             }
-        });}
+        });
+        console.log(salgadosAssados)
+        console.log(salgadosFritos)
+        console.log(sobremesas)
+        console.log(bebidas)
+    }
+
+
 function fnAJAX(){
     // Pedido do AJAX para puxar dados do servidor
     const request = new XMLHttpRequest()
@@ -121,6 +131,7 @@ function fnAJAX(){
         //teste pra ver se a conexão do ajax foi bem sucedida
         if(this.readyState == 4 && this.status == 200){
              var produtosExistentes = JSON.parse(this.responseText);
+             console.log(produtosExistentes)
             parseCategorias(produtosExistentes);
             mostrarProdutos(produtosExistentes)
     }
