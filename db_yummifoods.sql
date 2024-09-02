@@ -13,6 +13,7 @@ CREATE TABLE pedido (
     hora_pedido TIME NOT NULL,
     id_cliente CHAR(11) NOT NULL,
     preco_total DECIMAL(10, 2) NOT NULL,
+    status_pedido boolean not null,
    foreign key (id_cliente) references cliente(CPF)
 )engine=InnoDB default charset=utf8mb4;
  -- (gustavo guanabara): alter table pedidos add foreign key (id_cliente) references clientes(CPF);
@@ -22,8 +23,8 @@ CREATE TABLE pedido (
  nome_produto varchar(255) not null,
  preco_unitario decimal (10, 2) not null,
  quantidade int not null,
- status_pedido boolean not null,
- imagem blob 
+ imagem varchar(255) not null,
+ tipo_produto varchar(60)
  )engine=InnoDB default charset=utf8mb4;
  
  
@@ -40,11 +41,7 @@ CREATE TABLE pedido (
  CPF_funcionario char(11) NOT NULL PRIMARY KEY,
  nome_funcionario varchar(80) not null,
  email_funcionario varchar(255) not null,
- senha_funcionario varchar(255) not null
-
- alter table produtos drop column status_pedido;
-
- alter table pedido add column status_pedido boolean not null;
+ senha_funcionario varchar(255) not null);
 
 
  
