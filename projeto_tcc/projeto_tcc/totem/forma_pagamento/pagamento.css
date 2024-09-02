@@ -79,6 +79,44 @@ svg {
     width: 60px;
 }
 
+.container_pedido_finalizado {
+    margin: 0 auto;
+    position: absolute;
+    background-color: #ffff;
+    padding: 20px;
+    width: 400px;
+    height: 300px;
+    border-radius: 5px;
+    border: 1px solid;
+}
+
+.titulo_janela {
+    font-size: 36px;
+    margin-bottom: 30px;
+}
+
+.pedido_id {
+    font-size: 20px;
+    display: flex;
+    gap: 10px;
+    text-align: center;
+}
+
+.botao_pedido_finalizado {
+    background-color:#FF7A00;
+    font-size: 22px;
+    padding: 10px;
+    box-shadow: 0 3px 2px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+    width: 100px;
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translate(-50%);
+}
+
 .botoes {
     display: flex;
     justify-content: center;

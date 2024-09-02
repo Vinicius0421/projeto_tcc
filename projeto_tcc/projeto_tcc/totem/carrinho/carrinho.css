@@ -21,13 +21,16 @@ header {
     text-align: center;
 }
 
-.voltar{
-    margin-left: 45px;
+.botao_voltar {
+    width: 30px;
+}
+
+.container_voltar {
+    background-color: #FF7A00;
+    width: 50px;
     border: none;
-    border-radius: 15px;
-    width: 70px;
-    padding: 10px;
-    font-size: 16px;
+    border-radius: 5px;
+    margin-left: 40px;
     cursor: pointer;
     position: relative;
     z-index: 2;
