@@ -42,7 +42,7 @@ function removerProduto (){
     calcularTotal()
 }
 console.log(itensCarrinho)
-function mostrarProdutos() {
+function mostrarProdutos(itensCarrinho) {
     itensCarrinho.forEach(item => {
     const produtoCarrinho = document.getElementById('carrinho');
     let div = document.createElement('div')
