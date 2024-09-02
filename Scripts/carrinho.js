@@ -59,7 +59,7 @@ function removerProduto (){
 
 function mostrarProdutos(itensCarrinho) {
     itensCarrinho.forEach(item => {
-    if (item >= 1){
+    if (item.quantity > 0 ){
     const produtoCarrinho = document.getElementById('carrinho');
     let div = document.createElement('div')
     let div2 = document.createElement('div')
