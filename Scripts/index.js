@@ -1,5 +1,9 @@
 window.addEventListener('DOMContentLoaded', function(event){
 let carrinho = []
+var salgadosFritos = []
+var salgadosAssados = []
+var bebidas = []
+var sobremesas = []
 
     // Adiciona Event Listeners e pega as informções dos produtos que serão adicionados ao carrinho
     const botoescarrinho = document.querySelectorAll('.adicionar_carrinho').forEach(button=> {
@@ -89,10 +93,7 @@ function mostrarProdutos(produtosExistentes){
 }
 
 function parseCategorias(produtosExistentes){
-    var salgadosFritos = []
-    var salgadosAssados = []
-    var bebidas = []
-    var sobremesas = []
+
 
     produtosExistentes.forEach(item => {
             switch (item.tipo_produto) {
