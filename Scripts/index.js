@@ -65,8 +65,7 @@ function salvarCarrinho(){
 
 //Mostra os produtos puxados do banco de dados
 function mostrarProdutos(produtosExistentes){
-    let produtos = produtosExistentes
-    produtos.forEach(item => {
+    produtosExistentes.forEach(item => {
         let div = document.createElement("div");
         let a = document.getElementsByClassName("menu-container")[0]
         let menu = a.getElementsByClassName('menu')[0]
@@ -94,7 +93,6 @@ function mostrarProdutos(produtosExistentes){
 
 function parseCategorias(produtosExistentes){
 
-
     produtosExistentes.forEach(item => {
             switch (item.tipo_produto) {
                 case 'fritos':
@@ -113,6 +111,8 @@ function parseCategorias(produtosExistentes){
                     break;
             }
         });}
+
+
 function fnAJAX(){
     // Pedido do AJAX para puxar dados do servidor
     const request = new XMLHttpRequest()
@@ -121,6 +121,7 @@ function fnAJAX(){
         //teste pra ver se a conexão do ajax foi bem sucedida
         if(this.readyState == 4 && this.status == 200){
              var produtosExistentes = JSON.parse(this.responseText);
+             console.log(produtosExistentes)
             parseCategorias(produtosExistentes);
             mostrarProdutos(produtosExistentes)
     }

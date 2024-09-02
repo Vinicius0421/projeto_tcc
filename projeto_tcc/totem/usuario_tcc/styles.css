@@ -42,8 +42,9 @@ header h1 {
   
 }
 
-img {
+ .menu img {
   width: 350px;
+  height: 350px;
 }
 
 .carrinho{
