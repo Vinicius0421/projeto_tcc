@@ -9,19 +9,20 @@ img{
     
 }
 
-div{
+.container{
     background-color: #FFA356;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%,-50%);
-    padding: 80px;
+    padding: 30px;
     border-radius: 15px;
     color: black;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
 }
 
 input{
+    width: 300px;
     padding: 15px;
     border: none;
     outline: none;
@@ -31,6 +32,7 @@ input{
 }
 
 .inputSubmit{
+    margin-top: 20px;
     background-color: #FF7A00;
     border: none;
     padding: 15px;
@@ -45,6 +47,12 @@ input{
 .inputSubmit:hover{
     background-color: #FF5900;
     cursor: pointer;
+}
+
+.cadastro {
+    display: flex;
+    align-items: center;
+    gap: 20px;
 }
 
 h1{
