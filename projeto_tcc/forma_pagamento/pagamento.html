@@ -36,9 +36,19 @@
             </form>
         </div>
         <div class="botoes">
-            <button class="cancelar">Cancelar Pedido</button>
+            <a href="../inicio/login_usuario.html"><button class="cancelar">Cancelar Pedido</button></a>
             <button class="finalizar">Finalizar Compra</button>
         </div>
+
+        <div class="container_pedido_finalizado">
+            <h2 class="titulo_janela">Pedido Finalizado!</h2>
+            <div class="pedido_id">
+                <p class="n_pedido">Seu pedido:</p>
+                <p class="id_pedido">4144</p>
+            </div>
+            <a href="../inicio/login_usuario.html"><button type="submit" class="botao_pedido_finalizado">Ok</button></a>
+        </div>
+
         <script>
             document.querySelectorAll('.item').forEach(item => {
               item.addEventListener('click', function() {
@@ -60,5 +70,6 @@
             });
         </script>
     </main>
+    <script src="/projeto_tcc/Scripts/finalizar_compra.js"></script>
 </body>
 </html>
