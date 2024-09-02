@@ -73,5 +73,5 @@ function mostrarProdutos() {
     nome.innerHTML = `${item.nomeProduto}` 
     })
 }
-mostrarProdutos()
+mostrarProdutos(itensCarrinho)
 calcularTotal()
