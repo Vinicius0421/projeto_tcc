@@ -5,10 +5,10 @@ let salgadosAssados = []
 let bebidas = []
 let sobremesas = []
 
-    // Adiciona Event Listeners e pega as informções dos produtos que serão adicionados ao carrinho
-    const botoescarrinho = document.querySelectorAll('.adicionar_carrinho').forEach(button=> {
-    button.addEventListener('click', puxarDados) 
-    });
+// Adiciona Event Listeners e pega as informções dos produtos que serão adicionados ao carrinho
+const botoescarrinho = document.querySelectorAll('.adicionar_carrinho').forEach(button=> {
+button.addEventListener('click', puxarDados) 
+});
 
 function puxarDados(event){
     const produtoSelecionado = this.closest('.menu-item');
@@ -37,8 +37,9 @@ function adicionarAoCarrinho(produto) {
 function salvarCarrinho(){
     sessionStorage.setItem('carrinho', JSON.stringify(carrinho));
 }
-
-
+function carregarCarrinho(){
+    sessionStorage.getItem('carrinho', console.log(carrinho))
+}
     document.querySelectorAll('.categoria').forEach(span => {
         span.addEventListener('click', function(event){
             let categoria = span.innerText
@@ -65,8 +66,6 @@ function salvarCarrinho(){
             }
         })
     })
-
-
 //Mostra os produtos puxados do banco de dados
 function mostrarProdutos(produtosExistentes){
     let produtos = produtosExistentes
@@ -122,7 +121,6 @@ function parseCategorias(produtosExistentes){
         console.log(bebidas)
     }
 
-
 function fnAJAX(){
     // Pedido do AJAX para puxar dados do servidor
     const request = new XMLHttpRequest()
@@ -142,4 +140,5 @@ function fnAJAX(){
     request.send()
 }
 fnAJAX()
+carregarCarrinho()
 })

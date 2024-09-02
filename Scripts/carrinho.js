@@ -1,5 +1,9 @@
 let itensCarrinho = JSON.parse(sessionStorage.getItem('carrinho')) || []
 
+function salvarCarrinho(){
+    sessionStorage.setItem('carrinho', JSON.stringify(itensCarrinho))
+}
+
 document.addEventListener('DOMContentLoaded', () =>{
     document.querySelectorAll('.menos').forEach(button => {
         button.addEventListener("click", removerProduto)
@@ -31,19 +35,31 @@ function adicionarProduto (){
 }
 function removerProduto (){
     let produto = this.closest('.item')
+    const produtoCarrinho = {
+    nomeProduto: produto.querySelector('.nome_item').textContent,
+    imagemProduto: produto.querySelector('.img_item').src,
+    precoProduto: produto.querySelector('.preco_item').textContent
+    }
     let quantidade = produto.getElementsByClassName('quant_item')[0]
     let x = quantidade.innerText
     if (x == 1){
-        produto.remove()
-    } else {
-        x -= 1
-        quantidade.innerHTML = `${x}`
-    }
+            produto.remove()
+            const existe = itensCarrinho.find(item => item.nomeProduto == produtoCarrinho.nomeProduto)
+            console.log(existe)
+        if (existe){
+            existe.quantity -= 1
+            salvarCarrinho()
+        } else {
+            x -= 1
+            quantidade.innerHTML = `${x}`
+        }
     calcularTotal()
+    }
 }
-console.log(itensCarrinho)
+
 function mostrarProdutos(itensCarrinho) {
     itensCarrinho.forEach(item => {
+    if (item >= 1){
     const produtoCarrinho = document.getElementById('carrinho');
     let div = document.createElement('div')
     let div2 = document.createElement('div')
@@ -71,7 +87,9 @@ function mostrarProdutos(itensCarrinho) {
     imagem.src = item.imagemProduto
     preco.innerHTML = `${item.precoProduto}`
     nome.innerHTML = `${item.nomeProduto}` 
-    })
+    }})
 }
+
+
 mostrarProdutos(itensCarrinho)
 calcularTotal()
