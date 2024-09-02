@@ -4,19 +4,9 @@
     box-sizing: border-box;
 }
 
-header {
-    display: flex;
-    justify-content: space-between;
-    padding: 20px;
-}
-
-.login_funcionario {
-    background-color: #FFA356;
-}
-
 body {
     font-family: Arial, sans-serif;
-    background-color: #FFF6A5;
+    background-color: #000000;
 }
 
 img {
@@ -37,7 +27,7 @@ img {
 }
 
 h1 {
-    font-size: 40px;
+    font-size: 60px;
     margin-bottom: 30px;
 }
 
