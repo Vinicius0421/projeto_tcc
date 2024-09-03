@@ -27,6 +27,11 @@ function calcularTotal(){
 }
 function adicionarProduto (){
     let produto = this.closest('.item')
+    const produtoCarrinho = {
+        nomeProduto: produto.querySelector('.nome_item').textContent,
+        imagemProduto: produto.querySelector('.img_item').src,
+        precoProduto: produto.querySelector('.preco_item').textContent
+    }
     let quantidade = produto.getElementsByClassName('quant_item')[0]
     const existe = itensCarrinho.find(item => item.nomeProduto == produtoCarrinho.nomeProduto)
     existe.quantity +=1
@@ -39,9 +44,9 @@ function adicionarProduto (){
 function removerProduto (){
     let produto = this.closest('.item')
     const produtoCarrinho = {
-    nomeProduto: produto.querySelector('.nome_item').textContent,
-    imagemProduto: produto.querySelector('.img_item').src,
-    precoProduto: produto.querySelector('.preco_item').textContent
+        nomeProduto: produto.querySelector('.nome_item').textContent,
+        imagemProduto: produto.querySelector('.img_item').src,
+        precoProduto: produto.querySelector('.preco_item').textContent
     }
     let quantidade = produto.getElementsByClassName('quant_item')[0]
     let x = quantidade.innerText
