@@ -20,7 +20,7 @@
             $novoNome = uniqid ( time () ) . '.' . $extensao;
      
             // Concatena a pasta com o nome
-            $destino = "C:/wamp64/www/projeto_tcc/projeto_tcc/totem/usuario_tcc/img/" . $novoNome;
+            $destino = "C:/wamp64/www/projeto_tcc/projeto_tcc/usuario_tcc/img/" . $novoNome;
             $destinoModificado = substr($destino, 13);
      
             // tenta mover o arquivo para o destino
