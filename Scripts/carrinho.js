@@ -28,10 +28,13 @@ function calcularTotal(){
 function adicionarProduto (){
     let produto = this.closest('.item')
     let quantidade = produto.getElementsByClassName('quant_item')[0]
+    const existe = itensCarrinho.find(item => item.nomeProduto == produtoCarrinho.nomeProduto)
+    existe.quantity +=1
     let x = parseFloat(quantidade.innerText)
     x += 1
     quantidade.innerHTML = `${x}`
     calcularTotal()
+    salvarCarrinho()
 }
 function removerProduto (){
     let produto = this.closest('.item')
@@ -45,17 +48,19 @@ function removerProduto (){
     if (x == 1){
             produto.remove()
             const existe = itensCarrinho.find(item => item.nomeProduto == produtoCarrinho.nomeProduto)
-            console.log(existe)
-        if (existe){
             existe.quantity -= 1
             salvarCarrinho()
+            quantidade.innerHTML = `${x}`
         } else {
             x -= 1
+            const existe = itensCarrinho.find(item => item.nomeProduto == produtoCarrinho.nomeProduto)
+            existe.quantity -= 1
             quantidade.innerHTML = `${x}`
+            salvarCarrinho()
         }
     calcularTotal()
     }
-}
+
 
 function mostrarProdutos(itensCarrinho) {
     itensCarrinho.forEach(item => {
