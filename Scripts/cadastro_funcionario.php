@@ -22,13 +22,11 @@ if(isset($_POST['email']) || isset($_POST['cpf']) || isset($_POST['senha']) || i
         $emailFuncionario = $mysqli->real_escape_string($_POST['email']);
         $senhaFuncionario = $mysqli->real_escape_string($_POST['senha']);
 
-        $query = "INSERT INTO funcionario (CPF_funcionario, nome_funcionario, email_funcionario, senha_funcionario) VALUES ('$cpfFuncionario', '$nomeFuncionario', '$emailFuncionario', '$senhaFuncionario')";
+        $query = "INSERT INTO funcionarios (CPF_funcionario, nome_funcionario, email_funcionario, senha_funcionario) VALUES ('$cpfFuncionario', '$nomeFuncionario', '$emailFuncionario', '$senhaFuncionario')";
         $queryResult = $mysqli->query($query) or die("erro");
-        header("Location: projeto_tcc\area_funcionario\adm_pedidos\index.html ");
-        } else {
-            echo "<script>console.log('erro');</script>";
-            header("Location: projeto_tcc\area_funcionario\login\login.html");
+        //header("Location: projeto_tcc\area_funcionario\adm_pedidos\index.html ");
+        header("Location: \projeto_tcc\projeto_tcc\area_funcionario\login\login.html");
         }
     }
-}
+
 ?>
