@@ -42,22 +42,3 @@ CREATE TABLE pedido (
  nome_funcionario varchar(80) not null,
  email_funcionario varchar(255) not null,
  senha_funcionario varchar(255) not null);
-
-
- 
-
- 
- 
-
-
-
-
-
-
-
-
-
-
-
-
-
