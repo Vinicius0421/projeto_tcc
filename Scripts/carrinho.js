@@ -1,5 +1,9 @@
 let itensCarrinho = JSON.parse(sessionStorage.getItem('carrinho')) || []
 
+function salvarCarrinho(){
+    sessionStorage.setItem('carrinho', JSON.stringify(itensCarrinho))
+}
+
 document.addEventListener('DOMContentLoaded', () =>{
     document.querySelectorAll('.menos').forEach(button => {
         button.addEventListener("click", removerProduto)
@@ -23,27 +27,49 @@ function calcularTotal(){
 }
 function adicionarProduto (){
     let produto = this.closest('.item')
+    const produtoCarrinho = {
+        nomeProduto: produto.querySelector('.nome_item').textContent,
+        imagemProduto: produto.querySelector('.img_item').src,
+        precoProduto: produto.querySelector('.preco_item').textContent
+    }
     let quantidade = produto.getElementsByClassName('quant_item')[0]
+    const existe = itensCarrinho.find(item => item.nomeProduto == produtoCarrinho.nomeProduto)
+    existe.quantity +=1
     let x = parseFloat(quantidade.innerText)
     x += 1
     quantidade.innerHTML = `${x}`
     calcularTotal()
+    salvarCarrinho()
 }
 function removerProduto (){
     let produto = this.closest('.item')
+    const produtoCarrinho = {
+        nomeProduto: produto.querySelector('.nome_item').textContent,
+        imagemProduto: produto.querySelector('.img_item').src,
+        precoProduto: produto.querySelector('.preco_item').textContent
+    }
     let quantidade = produto.getElementsByClassName('quant_item')[0]
     let x = quantidade.innerText
     if (x == 1){
-        produto.remove()
-    } else {
-        x -= 1
-        quantidade.innerHTML = `${x}`
-    }
+            produto.remove()
+            const existe = itensCarrinho.find(item => item.nomeProduto == produtoCarrinho.nomeProduto)
+            existe.quantity -= 1
+            salvarCarrinho()
+            quantidade.innerHTML = `${x}`
+        } else {
+            x -= 1
+            const existe = itensCarrinho.find(item => item.nomeProduto == produtoCarrinho.nomeProduto)
+            existe.quantity -= 1
+            quantidade.innerHTML = `${x}`
+            salvarCarrinho()
+        }
     calcularTotal()
-}
-console.log(itensCarrinho)
-function mostrarProdutos() {
+    }
+
+
+function mostrarProdutos(itensCarrinho) {
     itensCarrinho.forEach(item => {
+    if (item.quantity > 0 ){
     const produtoCarrinho = document.getElementById('carrinho');
     let div = document.createElement('div')
     let div2 = document.createElement('div')
@@ -71,7 +97,9 @@ function mostrarProdutos() {
     imagem.src = item.imagemProduto
     preco.innerHTML = `${item.precoProduto}`
     nome.innerHTML = `${item.nomeProduto}` 
-    })
+    }})
 }
+
+
 mostrarProdutos(itensCarrinho)
 calcularTotal()
