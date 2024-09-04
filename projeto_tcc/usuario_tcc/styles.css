@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Lilita+One&display=swap");
+/* Estilos globais */
 * {
   margin: 0;
   padding: 0;
@@ -10,7 +11,7 @@ body {
   background: #ff9460;
   display: flex;
   flex-direction: column;
-  min-height: 120vh;
+  min-height: 100vh;
 }
 
 .header-container {
@@ -39,37 +40,36 @@ header h1 {
   text-align: center;
   color: #ffffff;
   font-size: 50px;
-  
 }
 
- .menu img {
+.menu img {
   width: 350px;
   height: 350px;
 }
 
-.carrinho{
+.carrinho {
   width: 50px;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50% -50%);
 }
 
-.carrinho-b{
+.carrinho-b {
+  border: none;
+  border-radius: 10px;
   padding: 10px;
-  display: block;
   background-color: #fa902d;
   margin-right: 47.5px;
-  justify-content: center;
+  display: flex;
   align-items: center;
+  justify-content: center;
 }
-.carrinho-b:hover{
+
+.carrinho-b:hover {
   transform: scale(1.05);
   cursor: pointer;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
   background-color: #ffa958;
 }
 
-/* Navigation Styles */
+/* Estilos de navegação */
 .nav {
   display: flex;
   justify-content: space-around;
@@ -81,12 +81,10 @@ header h1 {
 
 .nav span {
   color: #ffffff;
-  text-decoration: none;
   font-size: 30px;
   transition: color 0.3s ease;
   cursor: pointer;
-  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
-    1px 1px 0 #000;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
 }
 
 .nav span:hover {
@@ -94,40 +92,16 @@ header h1 {
   text-decoration: underline;
 }
 
-.nome_produto {
-  color: black;
-  font-size: 24px;
-  font-family: cursive;
-}
+/* Estilos do menu */
 .menu {
   display: flex;
-  flex-wrap: wrap; /* Permite que os itens quebrem linha */
+  flex-wrap: wrap;
   align-items: center;
   justify-content: center;
   gap: 40px;
   margin: 30px auto;
 }
-p {
-  font-size: 40px;
-  color: black;
-  text-align: center;
-  font-weight: bold;
-  padding: 20px;
-}
-.valor {
-  color: green !important;
-}
 
-button {
-  font-size: 20px;
-  color: white;
-  background-color: #ff7a00;
-  padding: 20px;
-  padding-left: 10px;
-  border-radius: 15px;
-  border: none;
-  cursor: pointer;
-}
 .menu-item {
   background-color: white;
   width: 390px;
@@ -148,9 +122,99 @@ button {
 img {
   width: 350px;
 }
-.menu-item:hover {
-  transform: scale(1.05);
-  cursor: pointer;
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-  background-color: #f3efe6;
+
+/* Estilos responsivos */
+@media (max-width: 1024px) {
+  header h1 {
+    font-size: 40px;
+  }
+
+  .nav span {
+    font-size: 25px;
+  }
+
+  .menu img {
+    width: 300px;
+    height: 300px;
+  }
+
+  .menu-item {
+    width: 330px;
+  }
+}
+
+@media (max-width: 768px) {
+  header {
+    display: flex;
+    flex-direction: row;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .logo {
+    margin-left: -10px;
+    width: 120px;
+  }
+
+  .carrinho-b {
+    margin-right: 0;
+  }
+
+  .nav {
+    align-items: center;
+  }
+
+  .nav span {
+    margin-bottom: 10px;
+    font-size: 15px;
+  }
+
+  .menu img {
+    width: 250px;
+    height: 250px;
+  }
+
+  .menu-item {
+    width: 300px;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo {
+    width: 60px;
+    margin-left: -10px;
+  }
+
+  header {
+    display: flex;
+    flex-direction: row;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  header h1 {
+    font-size: 30px;
+  }
+
+  .carrinho {
+    width: 20px;
+  }
+
+  .nav {
+    background: #ff7a00;
+  }
+
+  .nav span {
+    font-size: 10px;
+    padding: 5px;
+  }
+
+  .menu img {
+    width: 200px;
+    height: 200px;
+  }
+
+  .menu-item {
+    width: 260px;
+  }
 }
