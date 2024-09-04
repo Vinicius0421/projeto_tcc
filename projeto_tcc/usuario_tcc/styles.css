@@ -69,6 +69,29 @@ header h1 {
   background-color: #ffa958;
 }
 
+p {
+  font-size: 40px;
+  color: black;
+  text-align: center;
+  font-weight: bold;
+  padding: 20px;
+}
+
+.valor {
+  color: green !important;
+}
+
+button {
+  font-size: 20px;
+  color: white;
+  background-color: #ff7a00;
+  padding: 20px;
+  padding-left: 10px;
+  border-radius: 15px;
+  border: none;
+  cursor: pointer;
+}
+
 /* Estilos de navegação */
 .nav {
   display: flex;
