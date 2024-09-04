@@ -28,7 +28,7 @@
 
             $_SESSION['cpf'] = $usuario['CPF_funcionario'];
             $_SESSION['senha'] = $usuario['senha_funcionario'];
-            header("Location: /projeto_tcc/area_funcionario/adm_pedidos/");
+            header("Location: /projeto_tcc/projeto_tcc/area_funcionario/adm_pedidos/index.html");
         } else {
             echo "<script>alert('Erro');</script>";
             header("Location: /projeto_tcc/projeto_tcc/area_funcionario/login/login.html");
