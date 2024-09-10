@@ -1,0 +1,27 @@
+<div class="menu-item">
+    <img src="img/fotos_produtos/coxinha.png">
+    <p class="nome_produto">Coxinha</p>
+    <p class="valor">R$ 4,50</p>
+    <button>Adicionar ao Carrinho</button>
+</div>
+
+<div class="menu-item">
+    <img src="img/fotos_produtos/bolo_cenoura.png">
+    <p class="nome_produto">Bolo de cenoura</p>
+    <p class="valor">R$ 4,00</p>
+    <button>Adicionar ao Carrinho</button>
+</div>
+
+<div class="menu-item">
+    <img src="img/fotos_produtos/empada_camarao.jpg">
+    <p class="nome_produto">Empada</p>
+    <p class="valor">R$ 4,00</p>
+    <button>Adicionar ao Carrinho</button>
+</div>
+
+<div class="menu-item">
+    <img src="img/fotos_produtos/suco_laranja.png">
+    <p class="nome_produto">Suco de laranja</p>
+    <p class="valor">R$ 3,00</p>
+    <button>Adicionar ao Carrinho</button>
+</div>
